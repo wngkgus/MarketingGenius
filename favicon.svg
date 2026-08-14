@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">마케팅천재 MG</title>
+  <rect x="20" y="20" width="472" height="472" rx="116" fill="#14468C"/>
+  <path d="M82 382V130h63l55 99 55-99h63v252h-61V240l-49 88h-16l-49-88v142H82Z" fill="#FFFFFF"/>
+  <path d="M434 201c-18-24-45-37-77-37-62 0-104 44-104 92s42 92 104 92c30 0 56-10 77-29v-64h-80" fill="none" stroke="#4FD1E8" stroke-width="38" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
