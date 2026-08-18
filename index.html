@@ -427,14 +427,17 @@
 
   /* ---------- Work showcase / search subtopics ---------- */
   .work-showcase{padding:110px 0;background:#F5F8FC;}
-  .work-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
+  .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
   .work-card{
     overflow:hidden;background:#fff;border:1px solid var(--line);
     border-radius:var(--radius-md);box-shadow:var(--shadow-card);
     transition:transform .3s var(--ease),box-shadow .3s var(--ease);
   }
   .work-card:hover{transform:translateY(-6px);box-shadow:0 22px 46px -24px rgba(10,27,51,.4);}
-  .work-card img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--mist);}
+  .work-card:last-child{grid-column:1/-1;}
+  .work-card__gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:12px;background:#eaf0f8;}
+  .work-card__gallery figure{margin:0;min-width:0;height:270px;border-radius:11px;overflow:hidden;background:#fff;border:1px solid var(--line);}
+  .work-card__gallery img{width:100%;height:100%;object-fit:contain;background:#fff;}
   .work-card__body{padding:22px 18px 24px;}
   .work-card__body h3{font-size:18px;font-weight:800;color:var(--ink);}
   .work-card__body p{margin-top:9px;font-size:13.5px;color:var(--text-soft);line-height:1.65;}
@@ -678,6 +681,9 @@
     .float-call{padding:15px;border-radius:50%;}
     .contact-actions{grid-template-columns:1fr;}
     .work-grid{grid-template-columns:1fr;}
+    .work-card:last-child{grid-column:auto;}
+    .work-card__gallery{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .work-card__gallery figure{height:230px;}
   }
   @media (min-width:641px) and (max-width:1024px){
     .work-grid{grid-template-columns:repeat(2,1fr);}
@@ -877,7 +883,14 @@
       </div>
       <div class="work-grid">
         <article class="work-card reveal">
-          <img src="assets/service-blog.png" alt="대전블로그마케팅 콘텐츠 운영 작업사진" loading="lazy">
+          <div class="work-card__gallery">
+            <figure><img src="assets/blog-search-1.png" alt="네이버 블로그 통합검색 노출 작업사진 1" loading="lazy"></figure>
+            <figure><img src="assets/blog-search-2.png" alt="네이버 블로그 통합검색 노출 작업사진 2" loading="lazy"></figure>
+            <figure><img src="assets/blog-search-3.png" alt="네이버 블로그 통합검색 노출 작업사진 3" loading="lazy"></figure>
+            <figure><img src="assets/blog-branding.png" alt="브랜딩 블로그 운영 작업사진" loading="lazy"></figure>
+            <figure><img src="assets/blog-home-1.jpg" alt="홈페이지형 블로그 제작 작업사진 1" loading="lazy"></figure>
+            <figure><img src="assets/blog-home-2.png" alt="홈페이지형 블로그 제작 작업사진 2" loading="lazy"></figure>
+          </div>
           <div class="work-card__body">
             <h3><a href="blog.html">블로그</a></h3>
             <p>검색 의도를 반영한 주제와 원고를 꾸준히 발행해 브랜드 신뢰와 자연 검색 유입을 함께 쌓습니다.</p>
@@ -885,7 +898,10 @@
           </div>
         </article>
         <article class="work-card reveal">
-          <img src="assets/service-instagram.jpg" alt="인스타그램 콘텐츠 계정 운영 작업사진" loading="lazy">
+          <div class="work-card__gallery">
+            <figure><img src="assets/instagram-1.jpg" alt="인스타그램 계정 운영 작업사진" loading="lazy"></figure>
+            <figure><img src="assets/threads-1.jpg" alt="스레드 계정 운영 작업사진" loading="lazy"></figure>
+          </div>
           <div class="work-card__body">
             <h3><a href="instagram.html">인스타</a></h3>
             <p>피드와 릴스를 한 가지 분위기로 설계해 짧은 시간에도 강점을 전달하고 잠재고객과의 접점을 넓힙니다.</p>
@@ -893,7 +909,12 @@
           </div>
         </article>
         <article class="work-card reveal">
-          <img src="assets/service-cafe.png" alt="온라인 카페 바이럴 콘텐츠 작업사진" loading="lazy">
+          <div class="work-card__gallery">
+            <figure><img src="assets/cafe-1.png" alt="온라인 카페 콘텐츠 작업사진 1" loading="lazy"></figure>
+            <figure><img src="assets/cafe-2.png" alt="온라인 카페 콘텐츠 작업사진 2" loading="lazy"></figure>
+            <figure><img src="assets/cafe-3.png" alt="온라인 카페 콘텐츠 작업사진 3" loading="lazy"></figure>
+            <figure><img src="assets/cafe-4.png" alt="온라인 카페 콘텐츠 작업사진 4" loading="lazy"></figure>
+          </div>
           <div class="work-card__body">
             <h3><a href="cafe.html">카페</a></h3>
             <p>관심사가 모인 커뮤니티의 특성과 분위기를 분석해 정보성 콘텐츠로 인지도와 유입 경로를 확장합니다.</p>
@@ -901,7 +922,14 @@
           </div>
         </article>
         <article class="work-card reveal">
-          <img src="assets/service-code.png" alt="홈페이지 검색 노출 코드 최적화 작업사진" loading="lazy">
+          <div class="work-card__gallery">
+            <figure><img src="assets/code-1.png" alt="홈페이지 코드 최적화 작업사진 1" loading="lazy"></figure>
+            <figure><img src="assets/code-2.png" alt="홈페이지 코드 최적화 작업사진 2" loading="lazy"></figure>
+            <figure><img src="assets/code-3.png" alt="홈페이지 코드 최적화 작업사진 3" loading="lazy"></figure>
+            <figure><img src="assets/code-4.png" alt="홈페이지 코드 최적화 작업사진 4" loading="lazy"></figure>
+            <figure><img src="assets/powerlink-1.png" alt="검색광고 노출 관리 작업사진 1" loading="lazy"></figure>
+            <figure><img src="assets/powerlink-2.png" alt="검색광고 노출 관리 작업사진 2" loading="lazy"></figure>
+          </div>
           <div class="work-card__body">
             <h3><a href="code-seo.html">코드최적화</a></h3>
             <p>코딩으로 페이지 구조와 핵심 키워드를 알맞게 구성해 검색엔진이 홈페이지 주제를 더 정확히 이해하도록 돕습니다.</p>
@@ -909,7 +937,13 @@
           </div>
         </article>
         <article class="work-card reveal">
-          <img src="assets/service-homepage.png" alt="반응형 홈페이지 제작 작업사진" loading="lazy">
+          <div class="work-card__gallery">
+            <figure><img src="assets/homepage-1.png" alt="반응형 홈페이지 제작 작업사진 1" loading="lazy"></figure>
+            <figure><img src="assets/homepage-2.png" alt="반응형 홈페이지 제작 작업사진 2" loading="lazy"></figure>
+            <figure><img src="assets/homepage-3.png" alt="반응형 홈페이지 제작 작업사진 3" loading="lazy"></figure>
+            <figure><img src="assets/homepage-4.png" alt="반응형 홈페이지 제작 작업사진 4" loading="lazy"></figure>
+            <figure><img src="assets/homepage-5.png" alt="반응형 홈페이지 제작 작업사진 5" loading="lazy"></figure>
+          </div>
           <div class="work-card__body">
             <h3><a href="homepage.html">홈페이지</a></h3>
             <p>PC와 모바일에 맞는 반응형 화면을 제작해 서비스 장점을 명확하게 보여주고 상담으로 이어지는 동선을 만듭니다.</p>
