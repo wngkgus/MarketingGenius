@@ -426,25 +426,36 @@
   }
 
   /* ---------- Work showcase / search subtopics ---------- */
-  .work-showcase{padding:110px 0;background:#F5F8FC;}
-  .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+  .work-showcase{padding:120px 0;background:linear-gradient(180deg,#F6F9FD 0%,#EDF3FA 100%);}
+  .work-grid{display:flex;flex-direction:column;gap:30px;}
   .work-card{
-    overflow:hidden;background:#fff;border:1px solid var(--line);
-    border-radius:var(--radius-md);box-shadow:var(--shadow-card);
-    transition:transform .3s var(--ease),box-shadow .3s var(--ease);
+    display:grid;grid-template-columns:1.12fr .88fr;min-height:430px;
+    overflow:hidden;background:rgba(255,255,255,.94);border:1px solid rgba(20,70,140,.12);
+    border-radius:30px;box-shadow:0 24px 70px -42px rgba(10,27,51,.5);
+    transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease);
   }
-  .work-card:hover{transform:translateY(-6px);box-shadow:0 22px 46px -24px rgba(10,27,51,.4);}
-  .work-card:last-child{grid-column:1/-1;}
-  .work-card__gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:12px;background:#eaf0f8;}
-  .work-card__gallery figure{margin:0;min-width:0;height:270px;border-radius:11px;overflow:hidden;background:#fff;border:1px solid var(--line);}
-  .work-card__gallery img{width:100%;height:100%;object-fit:contain;background:#fff;}
-  .work-card__body{padding:22px 18px 24px;}
-  .work-card__body h3{font-size:18px;font-weight:800;color:var(--ink);}
-  .work-card__body p{margin-top:9px;font-size:13.5px;color:var(--text-soft);line-height:1.65;}
-  .work-card__link{
-    display:inline-flex;margin-top:14px;font-family:var(--font-mono);
-    font-size:11.5px;font-weight:700;color:var(--primary);
+  .work-card:hover{transform:translateY(-8px);box-shadow:0 34px 80px -40px rgba(10,27,51,.55);border-color:rgba(44,111,209,.34);}
+  .work-card:nth-child(even) .work-card__gallery{order:2;}
+  .work-card:nth-child(even) .work-card__body{order:1;}
+  .work-card__gallery{
+    display:grid;grid-template-columns:1.2fr .8fr;grid-template-rows:1fr 1fr;
+    gap:12px;padding:18px;background:linear-gradient(145deg,#0A1B33,#173B6D);
   }
+  .work-card__gallery figure{margin:0;min-width:0;min-height:0;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 12px 30px rgba(0,0,0,.18);}
+  .work-card__gallery figure:first-child{grid-row:1/-1;}
+  .work-card__gallery img{width:100%;height:100%;object-fit:contain;background:#fff;transition:transform .45s var(--ease);}
+  .work-card:hover .work-card__gallery img{transform:scale(1.015);}
+  .work-card__gallery.is-single{display:block;}
+  .work-card__gallery.is-single figure{height:100%;}
+  .work-card__body{padding:clamp(34px,5vw,62px);display:flex;flex-direction:column;justify-content:center;}
+  .work-card__num{font-family:var(--font-mono);font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--primary-light);}
+  .work-card__body h3{margin-top:14px;font-size:clamp(28px,3vw,40px);font-weight:900;letter-spacing:-.035em;color:var(--ink);}
+  .work-card__body p{margin-top:18px;font-size:16px;color:var(--text-soft);line-height:1.75;}
+  .work-card__tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
+  .work-card__tags span{padding:6px 11px;border-radius:999px;background:var(--sky-soft);color:var(--primary);font-size:12px;font-weight:750;}
+  .work-card__link{display:inline-flex;align-items:center;gap:10px;margin-top:30px;font-size:14px;font-weight:850;color:var(--primary);}
+  .work-card__link::after{content:"→";width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--primary);color:#fff;transition:transform .3s var(--ease);}
+  .work-card:hover .work-card__link::after{transform:translateX(5px);}
 
 
   /* ---------- Process ---------- */
@@ -680,10 +691,11 @@
     .float-call span{display:none;}
     .float-call{padding:15px;border-radius:50%;}
     .contact-actions{grid-template-columns:1fr;}
-    .work-grid{grid-template-columns:1fr;}
-    .work-card:last-child{grid-column:auto;}
-    .work-card__gallery{grid-template-columns:repeat(2,minmax(0,1fr));}
-    .work-card__gallery figure{height:230px;}
+    .work-card{grid-template-columns:1fr;min-height:0;border-radius:22px;}
+    .work-card:nth-child(even) .work-card__gallery,.work-card:nth-child(even) .work-card__body{order:initial;}
+    .work-card__gallery{height:340px;padding:12px;gap:8px;}
+    .work-card__gallery.is-single{height:360px;}
+    .work-card__body{padding:30px 24px 34px;}
   }
   @media (min-width:641px) and (max-width:1024px){
     .work-grid{grid-template-columns:repeat(2,1fr);}
@@ -882,74 +894,69 @@
         <p>실제 작업사진과 함께 블로그, 인스타, 카페, 코드 최적화, 홈페이지 제작의 핵심 장점을 확인해 보세요.</p>
       </div>
       <div class="work-grid">
-        <article class="work-card reveal">
+        <a class="work-card reveal" href="blog.html" aria-label="블로그 마케팅 작업 상세페이지로 이동">
           <div class="work-card__gallery">
-            <figure><img src="assets/blog-search-1.png" alt="네이버 블로그 통합검색 노출 작업사진 1" loading="lazy"></figure>
-            <figure><img src="assets/blog-search-2.png" alt="네이버 블로그 통합검색 노출 작업사진 2" loading="lazy"></figure>
-            <figure><img src="assets/blog-search-3.png" alt="네이버 블로그 통합검색 노출 작업사진 3" loading="lazy"></figure>
+            <figure><img src="assets/blog-search-1.png" alt="네이버 블로그 통합검색 노출 작업사진" loading="lazy"></figure>
             <figure><img src="assets/blog-branding.png" alt="브랜딩 블로그 운영 작업사진" loading="lazy"></figure>
-            <figure><img src="assets/blog-home-1.jpg" alt="홈페이지형 블로그 제작 작업사진 1" loading="lazy"></figure>
-            <figure><img src="assets/blog-home-2.png" alt="홈페이지형 블로그 제작 작업사진 2" loading="lazy"></figure>
+            <figure><img src="assets/blog-home-1.jpg" alt="홈페이지형 블로그 제작 작업사진" loading="lazy"></figure>
           </div>
           <div class="work-card__body">
-            <h3><a href="blog.html">블로그</a></h3>
+            <span class="work-card__num">01 · BLOG</span><h3>블로그</h3>
             <p>검색 의도를 반영한 주제와 원고를 꾸준히 발행해 브랜드 신뢰와 자연 검색 유입을 함께 쌓습니다.</p>
-            <a class="work-card__link" href="blog.html" aria-label="블로그 마케팅 자세히 보기">대전블로그마케팅 자세히 보기 →</a>
+            <div class="work-card__tags"><span>콘텐츠 기획</span><span>상위노출</span><span>브랜딩</span></div>
+            <span class="work-card__link">작업 상세페이지 보기</span>
           </div>
-        </article>
-        <article class="work-card reveal">
-          <div class="work-card__gallery">
+        </a>
+        <a class="work-card reveal" href="instagram.html" aria-label="인스타 운영 작업 상세페이지로 이동">
+          <div class="work-card__gallery is-single">
             <figure><img src="assets/instagram-1.jpg" alt="인스타그램 계정 운영 작업사진" loading="lazy"></figure>
-            <figure><img src="assets/threads-1.jpg" alt="스레드 계정 운영 작업사진" loading="lazy"></figure>
           </div>
           <div class="work-card__body">
-            <h3><a href="instagram.html">인스타</a></h3>
+            <span class="work-card__num">02 · INSTAGRAM</span><h3>인스타</h3>
             <p>피드와 릴스를 한 가지 분위기로 설계해 짧은 시간에도 강점을 전달하고 잠재고객과의 접점을 넓힙니다.</p>
-            <a class="work-card__link" href="instagram.html" aria-label="인스타 운영 자세히 보기">SNS 콘텐츠 운영 자세히 보기 →</a>
+            <div class="work-card__tags"><span>피드 기획</span><span>릴스</span><span>계정 운영</span></div>
+            <span class="work-card__link">작업 상세페이지 보기</span>
           </div>
-        </article>
-        <article class="work-card reveal">
+        </a>
+        <a class="work-card reveal" href="cafe.html" aria-label="카페 바이럴 작업 상세페이지로 이동">
           <div class="work-card__gallery">
             <figure><img src="assets/cafe-1.png" alt="온라인 카페 콘텐츠 작업사진 1" loading="lazy"></figure>
             <figure><img src="assets/cafe-2.png" alt="온라인 카페 콘텐츠 작업사진 2" loading="lazy"></figure>
             <figure><img src="assets/cafe-3.png" alt="온라인 카페 콘텐츠 작업사진 3" loading="lazy"></figure>
-            <figure><img src="assets/cafe-4.png" alt="온라인 카페 콘텐츠 작업사진 4" loading="lazy"></figure>
           </div>
           <div class="work-card__body">
-            <h3><a href="cafe.html">카페</a></h3>
-            <p>관심사가 모인 커뮤니티의 특성과 분위기를 분석해 정보성 콘텐츠로 인지도와 유입 경로를 확장합니다.</p>
-            <a class="work-card__link" href="cafe.html" aria-label="카페 바이럴 마케팅 자세히 보기">대전바이럴마케팅 자세히 보기 →</a>
+            <span class="work-card__num">03 · CAFE</span><h3>카페</h3>
+            <p>커뮤니티의 성격과 분위기를 분석해 정보성 콘텐츠로 인지도와 새로운 유입 경로를 확장합니다.</p>
+            <div class="work-card__tags"><span>커뮤니티 분석</span><span>정보 콘텐츠</span><span>바이럴</span></div>
+            <span class="work-card__link">작업 상세페이지 보기</span>
           </div>
-        </article>
-        <article class="work-card reveal">
+        </a>
+        <a class="work-card reveal" href="code-seo.html" aria-label="코드 최적화 작업 상세페이지로 이동">
           <div class="work-card__gallery">
-            <figure><img src="assets/code-1.png" alt="홈페이지 코드 최적화 작업사진 1" loading="lazy"></figure>
-            <figure><img src="assets/code-2.png" alt="홈페이지 코드 최적화 작업사진 2" loading="lazy"></figure>
-            <figure><img src="assets/code-3.png" alt="홈페이지 코드 최적화 작업사진 3" loading="lazy"></figure>
-            <figure><img src="assets/code-4.png" alt="홈페이지 코드 최적화 작업사진 4" loading="lazy"></figure>
-            <figure><img src="assets/powerlink-1.png" alt="검색광고 노출 관리 작업사진 1" loading="lazy"></figure>
-            <figure><img src="assets/powerlink-2.png" alt="검색광고 노출 관리 작업사진 2" loading="lazy"></figure>
+            <figure><img src="assets/code-1.png" alt="홈페이지 코드 최적화 작업사진" loading="lazy"></figure>
+            <figure><img src="assets/code-2.png" alt="검색 구조 개선 작업사진" loading="lazy"></figure>
+            <figure><img src="assets/powerlink-1.png" alt="검색광고 노출 관리 작업사진" loading="lazy"></figure>
           </div>
           <div class="work-card__body">
-            <h3><a href="code-seo.html">코드최적화</a></h3>
-            <p>코딩으로 페이지 구조와 핵심 키워드를 알맞게 구성해 검색엔진이 홈페이지 주제를 더 정확히 이해하도록 돕습니다.</p>
-            <a class="work-card__link" href="code-seo.html" aria-label="코드 최적화 자세히 보기">검색 구조 개선 자세히 보기 →</a>
+            <span class="work-card__num">04 · CODE SEO</span><h3>코드최적화</h3>
+            <p>페이지 구조와 핵심 키워드를 알맞게 구성해 검색엔진이 홈페이지의 주제를 더 정확히 이해하도록 돕습니다.</p>
+            <div class="work-card__tags"><span>HTML 구조</span><span>키워드 설계</span><span>사이트맵</span></div>
+            <span class="work-card__link">작업 상세페이지 보기</span>
           </div>
-        </article>
-        <article class="work-card reveal">
+        </a>
+        <a class="work-card reveal" href="homepage.html" aria-label="홈페이지 제작 작업 상세페이지로 이동">
           <div class="work-card__gallery">
-            <figure><img src="assets/homepage-1.png" alt="반응형 홈페이지 제작 작업사진 1" loading="lazy"></figure>
-            <figure><img src="assets/homepage-2.png" alt="반응형 홈페이지 제작 작업사진 2" loading="lazy"></figure>
-            <figure><img src="assets/homepage-3.png" alt="반응형 홈페이지 제작 작업사진 3" loading="lazy"></figure>
-            <figure><img src="assets/homepage-4.png" alt="반응형 홈페이지 제작 작업사진 4" loading="lazy"></figure>
-            <figure><img src="assets/homepage-5.png" alt="반응형 홈페이지 제작 작업사진 5" loading="lazy"></figure>
+            <figure><img src="assets/homepage-1.png" alt="반응형 홈페이지 제작 작업사진" loading="lazy"></figure>
+            <figure><img src="assets/homepage-2.png" alt="홈페이지 디자인 작업사진" loading="lazy"></figure>
+            <figure><img src="assets/homepage-3.png" alt="홈페이지 제작 사례 작업사진" loading="lazy"></figure>
           </div>
           <div class="work-card__body">
-            <h3><a href="homepage.html">홈페이지</a></h3>
-            <p>PC와 모바일에 맞는 반응형 화면을 제작해 서비스 장점을 명확하게 보여주고 상담으로 이어지는 동선을 만듭니다.</p>
-            <a class="work-card__link" href="homepage.html" aria-label="홈페이지 제작 자세히 보기">기획·디자인·개발 자세히 보기 →</a>
+            <span class="work-card__num">05 · WEBSITE</span><h3>홈페이지</h3>
+            <p>PC와 모바일에 맞는 반응형 화면을 제작해 강점을 명확하게 보여주고 상담으로 이어지는 동선을 만듭니다.</p>
+            <div class="work-card__tags"><span>반응형</span><span>UI 디자인</span><span>상담 동선</span></div>
+            <span class="work-card__link">작업 상세페이지 보기</span>
           </div>
-        </article>
+        </a>
       </div>
     </div>
   </section>

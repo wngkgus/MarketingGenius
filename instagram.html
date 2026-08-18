@@ -11,30 +11,39 @@
   <meta property="og:description" content="대전마케팅 1인 프리랜서의 인스타그램 운영 안내입니다. 피드와 릴스 기획, 디자인 방향, 해시태그와 게시 일정까지 직접 관리합니다.">
   <meta property="og:url" content="https://marketing-genius.wngkgus.workers.dev/instagram.html">
   <style>
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Pretendard,"Apple SD Gothic Neo",sans-serif;color:#14213d;line-height:1.7;background:#fff}
-    a{color:inherit;text-decoration:none} .container{width:min(1080px,calc(100% - 40px));margin:auto}
-    header{border-bottom:1px solid #dce6f5;background:#fff;position:sticky;top:0;z-index:5} .head{height:70px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .brand{font-size:20px;font-weight:900;color:#14468c} nav{display:flex;gap:18px;flex-wrap:wrap} nav a{font-size:14px;font-weight:700;color:#44536b} nav a[aria-current="page"]{color:#14468c}
-    .hero{padding:90px 0 70px;background:linear-gradient(145deg,#eff4fb,#dff6fa)} .eyebrow{font-size:12px;font-weight:800;letter-spacing:.12em;color:#14468c}
-    h1{font-size:clamp(34px,6vw,58px);line-height:1.18;letter-spacing:-.04em;margin:14px 0 22px;color:#0a1b33} .lead{max-width:760px;font-size:18px;color:#4f6079}
-    .gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:40px}
-    .gallery figure{margin:0;height:390px;border-radius:18px;overflow:hidden;background:#fff;border:1px solid #dce6f5;box-shadow:0 18px 42px -28px #0a1b33}
-    .gallery img{width:100%;height:100%;object-fit:contain;background:#fff}
-    .content{padding:90px 0} .content h2{font-size:clamp(28px,4vw,42px);line-height:1.3;margin:0 0 42px;color:#0a1b33}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px} .card{border:1px solid #dce6f5;border-radius:18px;padding:30px;background:#f7f9fc}
-    .card b{display:block;font-size:19px;color:#0a1b33;margin-bottom:10px} .card p{margin:0;color:#5b6b85;font-size:15px}
-    .cta{padding:64px 0;background:#0a1b33;color:white;text-align:center} .cta h2{font-size:32px;margin:0 0 12px} .cta p{margin:0 0 24px;color:#b9c8dc}
-    .button{display:inline-block;background:#3fc7e0;color:#0a1b33;font-weight:900;padding:13px 22px;border-radius:999px}
-    footer{padding:35px 0;background:#071326;color:#9eb0ca;font-size:13px} .footer-links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px} .footer-links a{color:#dff6fa}
-    @media(max-width:760px){.head{height:auto;padding:16px 0;align-items:flex-start;flex-direction:column}nav{gap:12px}.hero{padding:60px 0}.grid{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.gallery figure{height:280px}}
+    :root{--ink:#081A31;--blue:#174B91;--sky:#45C8DF;--mist:#F2F6FB;--line:#DCE6F3;--soft:#5B6B85}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Pretendard,"Apple SD Gothic Neo",sans-serif;color:#14213d;line-height:1.7;background:#fff;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none} .container{width:min(1160px,calc(100% - 40px));margin:auto}
+    header{border-bottom:1px solid rgba(220,230,243,.9);background:rgba(255,255,255,.94);backdrop-filter:blur(14px);position:sticky;top:0;z-index:5}
+    .head{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px} .brand{font-size:20px;font-weight:950;color:var(--blue)}
+    nav{display:flex;gap:8px;flex-wrap:wrap} nav a{font-size:13px;font-weight:750;color:#526178;padding:8px 11px;border-radius:999px;transition:.25s}
+    nav a:hover,nav a[aria-current="page"]{color:#fff;background:var(--blue)}
+    .hero{padding:110px 0 100px;background:radial-gradient(circle at 85% 10%,rgba(69,200,223,.2),transparent 35%),linear-gradient(145deg,#F7FAFD,#E9F1FA)}
+    .hero-copy{max-width:850px} .eyebrow{display:inline-flex;padding:7px 12px;border-radius:999px;background:#fff;color:var(--blue);font-size:11px;font-weight:850;letter-spacing:.12em;box-shadow:0 8px 30px -20px var(--ink)}
+    h1{font-size:clamp(40px,6vw,72px);line-height:1.1;letter-spacing:-.055em;margin:22px 0;color:var(--ink)} .lead{max-width:760px;font-size:19px;color:#53647C}
+    .portfolio{padding:100px 0;background:#0A1B33} .portfolio-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:38px;color:#fff}
+    .portfolio-head h2{margin:0;font-size:clamp(30px,4vw,48px);letter-spacing:-.035em} .portfolio-head p{margin:0;max-width:420px;color:#9FB2CC}
+    .gallery{columns:3 280px;column-gap:18px} .gallery figure{margin:0 0 18px;break-inside:avoid;border-radius:18px;overflow:hidden;background:#fff;border:1px solid rgba(255,255,255,.12);box-shadow:0 24px 55px -30px #000}
+    .gallery img{display:block;width:100%;height:auto;background:#fff;transition:transform .4s} .gallery figure:hover img{transform:scale(1.015)}
+    .content{padding:100px 0;background:#fff} .content h2{font-size:clamp(30px,4vw,46px);letter-spacing:-.035em;line-height:1.3;margin:0 0 42px;color:var(--ink)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px} .card{border:1px solid var(--line);border-radius:22px;padding:34px;background:linear-gradient(145deg,#fff,var(--mist));box-shadow:0 18px 45px -36px var(--ink)}
+    .card b{display:block;font-size:20px;color:var(--ink);margin-bottom:11px} .card p{margin:0;color:var(--soft);font-size:15px}
+    .next{padding:70px 0;background:var(--mist)} .next h2{margin:0 0 24px;color:var(--ink);font-size:28px} .next-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+    .next-grid a{padding:18px 14px;border-radius:15px;background:#fff;border:1px solid var(--line);font-weight:800;text-align:center;transition:.25s} .next-grid a:hover{color:#fff;background:var(--blue);transform:translateY(-4px)}
+    .cta{padding:76px 0;background:linear-gradient(135deg,#102C52,#0A1B33);color:white;text-align:center} .cta h2{font-size:34px;margin:0 0 12px} .cta p{margin:0 0 26px;color:#B9C8DC}
+    .button{display:inline-block;background:var(--sky);color:var(--ink);font-weight:900;padding:14px 24px;border-radius:999px}
+    footer{padding:38px 0;background:#061224;color:#9EB0CA;font-size:13px} .footer-links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px} .footer-links a{color:#DFF6FA}
+    @media(max-width:760px){.head{padding:15px 0;align-items:flex-start;flex-direction:column}nav{gap:5px}nav a{padding:6px 8px}.hero{padding:70px 0}.portfolio{padding:70px 0}.portfolio-head{align-items:start;flex-direction:column}.gallery{columns:2 140px;column-gap:10px}.gallery figure{margin-bottom:10px;border-radius:12px}.grid{grid-template-columns:1fr}.next-grid{grid-template-columns:1fr 1fr}}
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"대전 인스타 마케팅 | 피드·릴스 계정 운영","description":"대전마케팅 1인 프리랜서의 인스타그램 운영 안내입니다. 피드와 릴스 기획, 디자인 방향, 해시태그와 게시 일정까지 직접 관리합니다.","url":"https://marketing-genius.wngkgus.workers.dev/instagram.html","isPartOf":{"@type":"WebSite","name":"마케팅천재","url":"https://marketing-genius.wngkgus.workers.dev/"}}</script>
 </head>
 <body>
   <header><div class="container head"><a class="brand" href="index.html">마케팅천재</a><nav aria-label="세부 작업"><a href="blog.html">블로그</a><a href="instagram.html" aria-current="page">인스타</a><a href="cafe.html">카페</a><a href="code-seo.html">코드최적화</a><a href="homepage.html">홈페이지</a></nav></div></header>
   <main>
-    <section class="hero"><div class="container"><span class="eyebrow">인스타 · 1인 프리랜서 직접 진행</span><h1>짧게 보아도 기억되는 인스타 운영</h1><p class="lead">인스타그램은 첫 화면의 통일감과 짧은 콘텐츠의 전달력이 중요합니다. 브랜드 분위기와 고객 관심사를 함께 반영합니다.</p><div class="gallery"><figure><img src="assets/instagram-1.jpg" alt="인스타그램 계정 운영 작업사진" loading="lazy"></figure><figure><img src="assets/threads-1.jpg" alt="스레드 계정 운영 작업사진" loading="lazy"></figure></div></div></section>
+    <section class="hero"><div class="container hero-copy"><span class="eyebrow">인스타 · 1인 프리랜서 직접 진행</span><h1>짧게 보아도 기억되는 인스타 운영</h1><p class="lead">인스타그램은 첫 화면의 통일감과 짧은 콘텐츠의 전달력이 중요합니다. 브랜드 분위기와 고객 관심사를 함께 반영합니다.</p></div></section>
+    <section class="portfolio"><div class="container"><div class="portfolio-head"><h2>실제 작업 포트폴리오</h2><p>사진을 자르거나 억지로 늘리지 않고 원본 비율 그대로 정돈했습니다.</p></div><div class="gallery"><figure><img src="assets/instagram-1.jpg" alt="인스타그램 계정 운영 작업사진" loading="lazy"></figure></div></div></section>
     <section class="content"><div class="container"><h2>인스타 작업의 핵심 장점</h2><div class="grid"><article class="card"><b>피드 방향 설계</b><p>색상과 문장 톤, 이미지 구성을 정리해 계정을 처음 방문한 사람도 특징을 빠르게 이해하도록 만듭니다.</p></article><article class="card"><b>릴스 콘텐츠 기획</b><p>핵심 장점과 이용 장면을 짧고 선명하게 보여주는 주제로 도달 범위와 관심을 넓힙니다.</p></article><article class="card"><b>반응 데이터 점검</b><p>게시물별 도달과 저장, 반응을 살펴 다음 콘텐츠의 주제와 표현 방식을 계속 다듬습니다.</p></article></div></div></section>
+    <section class="next"><div class="container"><h2>다른 작업 페이지 둘러보기</h2><div class="next-grid"><a href="blog.html">블로그</a><a href="instagram.html" aria-current="page">인스타</a><a href="cafe.html">카페</a><a href="code-seo.html">코드최적화</a><a href="homepage.html">홈페이지</a></div></div></section>
     <section class="cta"><div class="container"><h2>목표에 맞는 방향부터 상담하세요</h2><p>상담부터 실행까지 한 사람이 직접 확인하고 진행합니다.</p><a class="button" href="tel:010-2719-5334">전화 상담 010-2719-5334</a></div></section>
   </main>
   <footer><div class="container"><div class="footer-links"><a href="index.html">대전마케팅</a><a href="blog.html">블로그</a><a href="instagram.html" aria-current="page">인스타</a><a href="cafe.html">카페</a><a href="code-seo.html">코드최적화</a><a href="homepage.html">홈페이지</a></div><div>대전바이럴마케팅 · 대전온라인마케팅 · 대전블로그마케팅</div></div></footer>
