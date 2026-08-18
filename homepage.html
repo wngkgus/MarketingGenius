@@ -6,10 +6,6 @@
   <title>대전 홈페이지 제작 | 반응형 웹페이지·검색 구조</title>
   <meta name="description" content="대전마케팅에 활용할 반응형 홈페이지를 1인 프리랜서가 직접 기획하고 제작합니다. 모바일 화면, 상담 동선과 검색 친화적 구조를 함께 구성합니다.">
   <link rel="canonical" href="https://marketing-genius.wngkgus.workers.dev/homepage.html">
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="icon" type="image/png" href="favicon.png" sizes="512x512">
-  <link rel="apple-touch-icon" href="favicon.png">
   <meta property="og:type" content="website">
   <meta property="og:title" content="대전 홈페이지 제작 | 반응형 웹페이지·검색 구조">
   <meta property="og:description" content="대전마케팅에 활용할 반응형 홈페이지를 1인 프리랜서가 직접 기획하고 제작합니다. 모바일 화면, 상담 동선과 검색 친화적 구조를 함께 구성합니다.">
@@ -22,35 +18,9 @@
     .head{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px} .brand{font-size:20px;font-weight:950;color:var(--blue)}
     nav{display:flex;gap:8px;flex-wrap:wrap} nav a{font-size:13px;font-weight:750;color:#526178;padding:8px 11px;border-radius:999px;transition:.25s}
     nav a:hover,nav a[aria-current="page"]{color:#fff;background:var(--blue)}
-    .intro{min-height:100svh;display:grid;place-items:center;position:relative;overflow:hidden;background:#061426;color:#fff;padding:70px 20px}
-    .intro::before,.intro::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
-    .intro::before{width:min(68vw,820px);height:min(68vw,820px);right:-24vw;top:-32vw;background:radial-gradient(circle,rgba(69,200,223,.2),rgba(23,75,145,.08) 48%,transparent 70%);animation:introGlow 5s ease-in-out infinite alternate}
-    .intro::after{width:520px;height:520px;left:-330px;bottom:-320px;border:1px solid rgba(69,200,223,.2);box-shadow:0 0 0 75px rgba(69,200,223,.025),0 0 0 150px rgba(69,200,223,.018)}
-    .intro-inner{width:min(1040px,100%);position:relative;z-index:1}
-    .intro-kicker{display:flex;align-items:center;gap:12px;margin-bottom:26px;font-size:12px;font-weight:850;letter-spacing:.16em;color:#85DDEB;opacity:0;animation:introUp .7s .1s forwards}
-    .intro-kicker::before{content:"";width:36px;height:2px;background:var(--sky)}
-    .intro-title{margin:0;max-width:980px;color:#fff;font-size:clamp(38px,6.2vw,78px);line-height:1.24;letter-spacing:-.055em;font-weight:950;text-wrap:balance}
-    .intro-title .line{display:block;opacity:0;transform:translateY(34px);animation:introUp .72s cubic-bezier(.22,1,.36,1) forwards}
-    .intro-title .line + .line{margin-top:.08em}
-    .intro-title .line:nth-child(1){animation-delay:.28s}
-    .intro-title .line:nth-child(2){animation-delay:.66s}
-    .intro-title .line:nth-child(3){animation-delay:1.04s}
-    .intro-title .line:nth-child(4){animation-delay:1.34s}
-    .intro-title .accent{display:inline-block;position:relative;color:#79DCEB}
-    .intro-title .accent::after{content:"";position:absolute;left:0;right:0;bottom:-.11em;height:.075em;border-radius:99px;background:var(--sky);transform:scaleX(0);transform-origin:left;animation:introLine .7s 1.62s forwards}
-    .intro-plus{display:inline-grid;place-items:center;width:.82em;height:.82em;margin:0 .12em;border-radius:50%;background:#fff;color:var(--blue);font-size:.72em;vertical-align:.08em;box-shadow:0 0 0 0 rgba(69,200,223,.4);animation:introPulse 2.3s 1.8s infinite}
-    .intro-hello{margin:42px 0 0;font-size:clamp(18px,2.3vw,26px);font-weight:750;color:#D3E0EF;opacity:0;transform:translateY(18px);animation:introUp .7s 1.95s forwards}
-    .intro-hello strong{color:#fff;font-weight:950}
-    .intro-button{display:inline-flex;align-items:center;gap:12px;margin-top:32px;padding:14px 20px;border:1px solid rgba(255,255,255,.22);border-radius:999px;color:#fff;font-size:13px;font-weight:850;opacity:0;transform:translateY(18px);animation:introUp .7s 2.15s forwards;transition:.25s}
-    .intro-button::after{content:"↓";display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--sky);color:var(--ink)}
-    .intro-button:hover{background:#fff;color:var(--ink);transform:translateY(-3px)}
-    @keyframes introUp{to{opacity:1;transform:translateY(0)}}
-    @keyframes introLine{to{transform:scaleX(1)}}
-    @keyframes introGlow{to{transform:translate(-3%,6%) scale(1.08)}}
-    @keyframes introPulse{0%,100%{box-shadow:0 0 0 0 rgba(69,200,223,.38)}50%{box-shadow:0 0 0 13px rgba(69,200,223,0)}}
     .hero{padding:110px 0 100px;background:radial-gradient(circle at 85% 10%,rgba(69,200,223,.2),transparent 35%),linear-gradient(145deg,#F7FAFD,#E9F1FA)}
     .hero-copy{max-width:850px} .eyebrow{display:inline-flex;padding:7px 12px;border-radius:999px;background:#fff;color:var(--blue);font-size:11px;font-weight:850;letter-spacing:.12em;box-shadow:0 8px 30px -20px var(--ink)}
-    h1,.hero h2{font-size:clamp(40px,6vw,72px);line-height:1.1;letter-spacing:-.055em;margin:22px 0;color:var(--ink)} .lead{max-width:760px;font-size:19px;color:#53647C}
+    h1{font-size:clamp(40px,6vw,72px);line-height:1.1;letter-spacing:-.055em;margin:22px 0;color:var(--ink)} .lead{max-width:760px;font-size:19px;color:#53647C}
     .portfolio{padding:100px 0;background:#0A1B33} .portfolio-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:38px;color:#fff}
     .portfolio-head h2{margin:0;font-size:clamp(30px,4vw,48px);letter-spacing:-.035em}
     .slider{position:relative;border:1px solid rgba(255,255,255,.12);border-radius:28px;background:#071426;padding:22px;box-shadow:0 30px 80px -45px #000}
@@ -75,15 +45,14 @@
     .cta{padding:76px 0;background:linear-gradient(135deg,#102C52,#0A1B33);color:white;text-align:center} .cta h2{font-size:34px;margin:0 0 12px} .cta p{margin:0 0 26px;color:#B9C8DC}
     .button{display:inline-block;background:var(--sky);color:var(--ink);font-weight:900;padding:14px 24px;border-radius:999px}
     footer{padding:38px 0;background:#061224;color:#9EB0CA;font-size:13px} .footer-links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px} .footer-links a{color:#DFF6FA}
-    @media(max-width:760px){.intro{padding:58px 20px}.intro-kicker{margin-bottom:20px}.intro-title{font-size:clamp(35px,11vw,54px);line-height:1.22}.intro-title .line{margin-bottom:.08em}.intro-hello{margin-top:28px}.intro-button{margin-top:26px}.head{padding:15px 0;align-items:flex-start;flex-direction:column}nav{gap:5px}nav a{padding:6px 8px}.hero{padding:70px 0}.portfolio{padding:70px 0}.portfolio-head{align-items:start;flex-direction:column}.slider{padding:10px;border-radius:18px}.slider-viewport{border-radius:12px}.slider-slide{height:64vh;max-height:650px;padding:10px}.slider-button{width:40px;height:40px;font-size:20px}.slider-prev{left:16px}.slider-next{right:16px}.case-slide{height:auto;min-height:0;padding:12px}.case{padding:12px}.case-pair{grid-template-columns:1fr;gap:12px}.grid{grid-template-columns:1fr}.next-grid{grid-template-columns:1fr 1fr}}
-    @media(prefers-reduced-motion:reduce){.intro *{animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important}.intro::before{animation:none}}
+    @media(max-width:760px){.head{padding:15px 0;align-items:flex-start;flex-direction:column}nav{gap:5px}nav a{padding:6px 8px}.hero{padding:70px 0}.portfolio{padding:70px 0}.portfolio-head{align-items:start;flex-direction:column}.slider{padding:10px;border-radius:18px}.slider-viewport{border-radius:12px}.slider-slide{height:64vh;max-height:650px;padding:10px}.slider-button{width:40px;height:40px;font-size:20px}.slider-prev{left:16px}.slider-next{right:16px}.case-slide{height:auto;min-height:0;padding:12px}.case{padding:12px}.case-pair{grid-template-columns:1fr;gap:12px}.grid{grid-template-columns:1fr}.next-grid{grid-template-columns:1fr 1fr}}
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"대전 홈페이지 제작 | 반응형 웹페이지·검색 구조","description":"대전마케팅에 활용할 반응형 홈페이지를 1인 프리랜서가 직접 기획하고 제작합니다. 모바일 화면, 상담 동선과 검색 친화적 구조를 함께 구성합니다.","url":"https://marketing-genius.wngkgus.workers.dev/homepage.html","isPartOf":{"@type":"WebSite","name":"마케팅천재","url":"https://marketing-genius.wngkgus.workers.dev/"}}</script>
 </head>
 <body>
   <header><div class="container head"><a class="brand" href="index.html">마케팅천재</a><nav aria-label="세부 작업"><a href="blog.html">블로그</a><a href="instagram.html">인스타&스레드</a><a href="cafe.html">카페</a><a href="code-seo.html">코드최적화</a><a href="homepage.html" aria-current="page">홈페이지</a></nav></div></header>
   <main>
-    <section class="hero"><div class="container hero-copy"><span class="eyebrow">홈페이지 · 1인 프리랜서 직접 진행</span><h1>디자인은 물론 검색까지 함께 고려한 홈페이지</h1><p class="lead">홈페이지는 소개 화면이면서 검색과 상담이 시작되는 공간입니다. 필요한 정보를 빠르게 찾고 연락까지 이어지도록 구조를 설계합니다.</p></div></section>
+    <section class="hero"><div class="container hero-copy"><span class="eyebrow">홈페이지 · 1인 프리랜서 직접 진행</span><h1>보여주기와 검색을 함께 고려한 홈페이지</h1><p class="lead">홈페이지는 소개 화면이면서 검색과 상담이 시작되는 공간입니다. 필요한 정보를 빠르게 찾고 연락까지 이어지도록 구조를 설계합니다.</p></div></section>
     <section class="portfolio"><div class="container"><div class="portfolio-head"><h2>실제 작업 포트폴리오</h2></div><div class="slider" data-slider><div class="slider-viewport"><div class="slider-track"><div class="slider-slide" style="--slide-bg:url(assets/homepage-1.png)"><figure><img src="assets/homepage-1.png" alt="반응형 홈페이지 제작 작업사진 1" loading="lazy"></figure></div><div class="slider-slide" style="--slide-bg:url(assets/homepage-2.png)"><figure><img src="assets/homepage-2.png" alt="반응형 홈페이지 제작 작업사진 2" loading="lazy"></figure></div><div class="slider-slide" style="--slide-bg:url(assets/homepage-3.png)"><figure><img src="assets/homepage-3.png" alt="반응형 홈페이지 제작 작업사진 3" loading="lazy"></figure></div><div class="slider-slide" style="--slide-bg:url(assets/homepage-4.png)"><figure><img src="assets/homepage-4.png" alt="반응형 홈페이지 제작 작업사진 4" loading="lazy"></figure></div><div class="slider-slide" style="--slide-bg:url(assets/homepage-5.png)"><figure><img src="assets/homepage-5.png" alt="반응형 홈페이지 제작 작업사진 5" loading="lazy"></figure></div></div></div><button class="slider-button slider-prev" type="button" aria-label="이전 사진">‹</button><button class="slider-button slider-next" type="button" aria-label="다음 사진">›</button><div class="slider-footer"><div class="slider-dots"><button class="slider-dot is-active" type="button" aria-label="1번 사진"></button><button class="slider-dot" type="button" aria-label="2번 사진"></button><button class="slider-dot" type="button" aria-label="3번 사진"></button><button class="slider-dot" type="button" aria-label="4번 사진"></button><button class="slider-dot" type="button" aria-label="5번 사진"></button></div><span class="slider-count">1 / 5</span></div></div></div></section>
     <section class="content"><div class="container"><h2>홈페이지 작업의 핵심 장점</h2><div class="grid"><article class="card"><b>반응형 화면</b><p>PC와 모바일 크기에 맞춰 글자와 이미지, 버튼이 자연스럽게 배치되도록 제작합니다.</p></article><article class="card"><b>상담 동선 설계</b><p>서비스 장점과 진행 방식, 자주 묻는 질문을 순서대로 보여주고 전화와 카카오톡 연결을 분명하게 둡니다.</p></article><article class="card"><b>검색 기반 구성</b><p>페이지별 제목과 설명, 핵심 주제와 내부 링크를 설계해 대전온라인마케팅의 기반을 마련합니다.</p></article></div></div></section>
     <section class="next"><div class="container"><h2>다른 작업 페이지 둘러보기</h2><div class="next-grid"><a href="blog.html">블로그</a><a href="instagram.html">인스타&스레드</a><a href="cafe.html">카페</a><a href="code-seo.html">코드최적화</a><a href="homepage.html" aria-current="page">홈페이지</a></div></div></section>
