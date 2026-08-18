@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>대전마케팅 | 바이럴마케팅·온라인마케팅·블로그마케팅</title>
+<title>대전온라인마케팅 | 세종 바이럴마케팅·블로그마케팅</title>
 <meta name="description" content="대전마케팅 1인 프리랜서가 대전바이럴마케팅, 대전온라인마케팅, 대전블로그마케팅과 인스타·카페 운영, 홈페이지 제작 및 코드 최적화를 직접 진행합니다.">
 <meta name="keywords" content="대전마케팅,대전바이럴마케팅,대전온라인마케팅,대전블로그마케팅,블로그마케팅,인스타마케팅,카페마케팅,코드최적화,홈페이지제작,마케팅천재">
 <meta name="author" content="마케팅천재">
-<meta name="application-name" content="마케팅천재">
+<meta name="application-name" content="대전온라인마케팅 | 세종 바이럴마케팅·블로그마케팅">
 <link rel="canonical" href="https://marketing-genius.wngkgus.workers.dev/">
 <link rel="sitemap" type="application/xml" href="https://marketing-genius.wngkgus.workers.dev/sitemap.xml">
 <meta property="og:type" content="website">
-<meta property="og:title" content="대전마케팅 | 바이럴마케팅·온라인마케팅·블로그마케팅">
+<meta property="og:title" content="대전온라인마케팅 | 세종 바이럴마케팅·블로그마케팅">
 <meta property="og:description" content="대전바이럴마케팅, 대전온라인마케팅, 대전블로그마케팅을 1인 프리랜서가 직접 기획하고 운영합니다.">
 <meta property="og:url" content="https://marketing-genius.wngkgus.workers.dev/">
-<meta property="og:site_name" content="마케팅천재">
+<meta property="og:site_name" content="대전온라인마케팅 | 세종 바이럴마케팅·블로그마케팅">
 <meta property="og:locale" content="ko_KR">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -59,7 +59,7 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "마케팅천재",
+  "name": "대전온라인마케팅 | 세종 바이럴마케팅·블로그마케팅",
   "url": "https://marketing-genius.wngkgus.workers.dev/"
 }
 </script>
@@ -443,10 +443,14 @@
   }
   .work-card__gallery figure{margin:0;min-width:0;min-height:0;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 12px 30px rgba(0,0,0,.18);}
   .work-card__gallery figure:first-child{grid-row:1/-1;}
-  .work-card__gallery img{width:100%;height:100%;object-fit:contain;background:#fff;transition:transform .45s var(--ease);}
+  .work-card__gallery img{width:100%;height:100%;object-fit:cover;background:#102A4D;transition:transform .45s var(--ease);}
   .work-card:hover .work-card__gallery img{transform:scale(1.015);}
   .work-card__gallery.is-single{display:block;}
   .work-card__gallery.is-single figure{height:100%;}
+  .work-card__gallery.is-pair{grid-template-columns:1fr 1fr;grid-template-rows:1fr;}
+  .work-card__gallery.is-pair figure:first-child{grid-row:auto;}
+  .work-card__gallery.is-quad{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;}
+  .work-card__gallery.is-quad figure:first-child{grid-row:auto;}
   .work-card__body{padding:clamp(34px,5vw,62px);display:flex;flex-direction:column;justify-content:center;}
   .work-card__num{font-family:var(--font-mono);font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--primary-light);}
   .work-card__body h3{margin-top:14px;font-size:clamp(28px,3vw,40px);font-weight:900;letter-spacing:-.035em;color:var(--ink);}
@@ -522,23 +526,28 @@
   .why-item p{margin-top:8px;font-size:13.8px;color:var(--text-soft);line-height:1.6;}
 
 
-  /* ---------- Local band ---------- */
-  .local-band{
-    padding:90px 0;
-    background:linear-gradient(120deg,var(--ink) 0%,#0F2A52 100%);
+  /* ---------- Difference ---------- */
+  .difference{
+    padding:100px 0;background:linear-gradient(135deg,#07182F 0%,#123764 58%,#0D294D 100%);
     color:#fff;position:relative;overflow:hidden;
   }
-  .local-inner{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;position:relative;z-index:1;}
-  .local-band h2{font-size:clamp(26px,3.6vw,34px);font-weight:800;line-height:1.4;}
-  .local-band .eyebrow{color:var(--sky);}
-  .local-band p.lead{margin-top:16px;color:rgba(255,255,255,.65);font-size:15.5px;max-width:440px;}
-  .chip-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;}
-  .chip{
-    font-family:var(--font-mono);font-size:12.5px;
-    border:1px solid rgba(255,255,255,.2);
-    padding:8px 14px;border-radius:999px;color:rgba(255,255,255,.82);
+  .difference::before{
+    content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-120px;top:-210px;
+    border:1px solid rgba(63,199,224,.22);box-shadow:0 0 0 65px rgba(63,199,224,.035),0 0 0 130px rgba(63,199,224,.025);
   }
-  .skyline{opacity:.9;}
+  .difference-inner{display:grid;grid-template-columns:.65fr 1.35fr;gap:24px;align-items:stretch;position:relative;z-index:1;}
+  .difference-question,.difference-answer{border-radius:28px;padding:clamp(30px,4vw,48px);}
+  .difference-question{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.12);display:flex;flex-direction:column;justify-content:space-between;}
+  .difference .eyebrow{color:var(--sky);}
+  .difference-question h2{margin-top:22px;font-size:clamp(25px,2.8vw,34px);font-weight:850;line-height:1.45;letter-spacing:-.035em;}
+  .difference-mark{margin-top:34px;font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;color:rgba(255,255,255,.43);}
+  .difference-answer{background:#fff;color:var(--ink);box-shadow:0 30px 75px -38px rgba(0,0,0,.72);display:flex;flex-direction:column;justify-content:center;}
+  .difference-answer .answer-label{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:850;letter-spacing:.08em;color:var(--primary);}
+  .difference-answer .answer-label::before{content:"";width:24px;height:2px;background:var(--sky);}
+  .difference-answer p{margin-top:24px;font-size:clamp(16px,1.65vw,20px);font-weight:700;line-height:1.8;letter-spacing:-.02em;}
+  .difference-answer p + p{margin-top:13px;padding-top:13px;border-top:1px solid var(--line);}
+  .difference-points{display:flex;flex-wrap:wrap;gap:9px;margin-top:30px;}
+  .difference-points span{padding:9px 14px;border-radius:999px;background:var(--sky-soft);color:var(--primary);font-size:12.5px;font-weight:800;}
 
 
   /* ---------- FAQ ---------- */
@@ -680,7 +689,7 @@
     .process-step:nth-child(3)::after{display:none;}
     .why-grid{grid-template-columns:1fr;}
     .why-visual{position:static;}
-    .local-inner{grid-template-columns:1fr;}
+    .difference-inner{grid-template-columns:1fr;}
     .contact-grid{grid-template-columns:1fr;}
   }
   @media (max-width:640px){
@@ -722,7 +731,7 @@
         <li><a href="#work">작업분야</a></li>
         <li><a href="#process">진행절차</a></li>
         <li><a href="#why">강점</a></li>
-        <li><a href="#local">대전지역</a></li>
+        <li><a href="#difference">차이점</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">문의하기</a></li>
       </ul>
@@ -744,7 +753,7 @@
         <li><a href="#work">작업분야</a></li>
         <li><a href="#process">진행절차</a></li>
         <li><a href="#why">강점</a></li>
-        <li><a href="#local">대전지역</a></li>
+        <li><a href="#difference">차이점</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">문의하기</a></li>
       </ul>
@@ -762,8 +771,8 @@
     <div class="container hero-grid">
       <div class="hero-copy">
         <span class="eyebrow">DAEJEON ADVERTISING AGENCY</span>
-        <h1><em>대전마케팅</em>이 필요하다면,<br>1인 프리랜서가 직접 진행합니다.</h1>
-        <p>대전바이럴마케팅과 대전온라인마케팅부터 대전블로그마케팅, 인스타그램·카페 운영, 홈페이지 제작과 코드 최적화까지 목적에 맞게 직접 기획하고 실행합니다.</p>
+        <h1><em>대전·세종 온라인마케팅,</em><br>아직도 블로그에만<br>의존하세요?</h1>
+        <p>키워드마다 맞는 작업, 8년차 마케터가 효과적으로 진행해드립니다.</p>
         <div class="hero-actions">
           <a href="tel:010-2719-5334" class="btn btn-primary">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M6 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v3a2 2 0 0 1-2 2C10.6 20 4 13.4 4 6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
@@ -876,8 +885,8 @@
           <div class="service-icon">
             <svg viewBox="0 0 24 24" fill="none"><path d="m8 8-4 4 4 4M16 8l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 5 10 19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </div>
-          <h3>대전 온라인 광고·SEO</h3>
-          <p>대전온라인마케팅을 위한 시맨틱 마크업, 메타태그, 핵심 키워드와 홈페이지 코드 구조를 검색엔진에 맞게 다듬습니다.</p>
+          <h3>코드최적화·키워드 상위노출</h3>
+          <p>시맨틱 마크업, 메타태그와 핵심 키워드 구조를 검색엔진에 맞게 다듬어 키워드 상위노출을 위한 기반을 마련합니다.</p>
           <span class="service-tag">대전온라인마케팅</span>
         </article>
       </div>
@@ -895,10 +904,11 @@
       </div>
       <div class="work-grid">
         <a class="work-card reveal" href="blog.html" aria-label="블로그 마케팅 작업 상세페이지로 이동">
-          <div class="work-card__gallery">
-            <figure><img src="assets/blog-search-1.png" alt="네이버 블로그 통합검색 노출 작업사진" loading="lazy"></figure>
-            <figure><img src="assets/blog-branding.png" alt="브랜딩 블로그 운영 작업사진" loading="lazy"></figure>
-            <figure><img src="assets/blog-home-1.jpg" alt="홈페이지형 블로그 제작 작업사진" loading="lazy"></figure>
+          <div class="work-card__gallery is-quad">
+            <figure><img src="assets/thumb-blog-1.jpg" alt="네이버 블로그 통합검색 노출 작업사진" loading="lazy"></figure>
+            <figure><img src="assets/thumb-blog-2.jpg" alt="네이버 블로그 검색 노출 작업사진" loading="lazy"></figure>
+            <figure><img src="assets/thumb-blog-3.jpg" alt="브랜딩 블로그 운영 작업사진" loading="lazy"></figure>
+            <figure><img src="assets/thumb-blog-4.jpg" alt="홈페이지형 블로그 제작 작업사진" loading="lazy"></figure>
           </div>
           <div class="work-card__body">
             <span class="work-card__num">01 · BLOG</span><h3>블로그</h3>
@@ -907,22 +917,23 @@
             <span class="work-card__link">작업 상세페이지 보기</span>
           </div>
         </a>
-        <a class="work-card reveal" href="instagram.html" aria-label="인스타 운영 작업 상세페이지로 이동">
+        <a class="work-card reveal" href="instagram.html" aria-label="인스타와 스레드 운영 작업 상세페이지로 이동">
           <div class="work-card__gallery is-single">
-            <figure><img src="assets/instagram-1.jpg" alt="인스타그램 계정 운영 작업사진" loading="lazy"></figure>
+            <figure><img src="assets/thumb-instagram-1.jpg" alt="인스타그램 조회수 328.3만 계정 운영 작업사진" loading="lazy"></figure>
           </div>
           <div class="work-card__body">
-            <span class="work-card__num">02 · INSTAGRAM</span><h3>인스타</h3>
-            <p>피드와 릴스를 한 가지 분위기로 설계해 짧은 시간에도 강점을 전달하고 잠재고객과의 접점을 넓힙니다.</p>
-            <div class="work-card__tags"><span>피드 기획</span><span>릴스</span><span>계정 운영</span></div>
+            <span class="work-card__num">02 · INSTAGRAM & THREADS</span><h3>인스타&스레드</h3>
+            <p>인스타 피드와 릴스, 스레드 콘텐츠를 채널 특성에 맞게 운영해 도달과 반응, 팔로워 접점을 함께 넓힙니다.</p>
+            <div class="work-card__tags"><span>피드·릴스</span><span>스레드</span><span>계정 운영</span></div>
             <span class="work-card__link">작업 상세페이지 보기</span>
           </div>
         </a>
         <a class="work-card reveal" href="cafe.html" aria-label="카페 바이럴 작업 상세페이지로 이동">
-          <div class="work-card__gallery">
-            <figure><img src="assets/cafe-1.png" alt="온라인 카페 콘텐츠 작업사진 1" loading="lazy"></figure>
-            <figure><img src="assets/cafe-2.png" alt="온라인 카페 콘텐츠 작업사진 2" loading="lazy"></figure>
-            <figure><img src="assets/cafe-3.png" alt="온라인 카페 콘텐츠 작업사진 3" loading="lazy"></figure>
+          <div class="work-card__gallery is-quad">
+            <figure><img src="assets/thumb-cafe-1.jpg" alt="온라인 카페 콘텐츠 작업사진 1" loading="lazy"></figure>
+            <figure><img src="assets/thumb-cafe-2.jpg" alt="온라인 카페 콘텐츠 작업사진 2" loading="lazy"></figure>
+            <figure><img src="assets/thumb-cafe-3.jpg" alt="온라인 카페 콘텐츠 작업사진 3" loading="lazy"></figure>
+            <figure><img src="assets/thumb-cafe-4.jpg" alt="온라인 카페 콘텐츠 작업사진 4" loading="lazy"></figure>
           </div>
           <div class="work-card__body">
             <span class="work-card__num">03 · CAFE</span><h3>카페</h3>
@@ -932,23 +943,25 @@
           </div>
         </a>
         <a class="work-card reveal" href="code-seo.html" aria-label="코드 최적화 작업 상세페이지로 이동">
-          <div class="work-card__gallery">
-            <figure><img src="assets/code-1.png" alt="홈페이지 코드 최적화 작업사진" loading="lazy"></figure>
-            <figure><img src="assets/code-2.png" alt="검색 구조 개선 작업사진" loading="lazy"></figure>
-            <figure><img src="assets/powerlink-1.png" alt="검색광고 노출 관리 작업사진" loading="lazy"></figure>
+          <div class="work-card__gallery is-quad">
+            <figure><img src="assets/thumb-code-1.jpg" alt="홈페이지 코드 최적화 작업사진" loading="lazy"></figure>
+            <figure><img src="assets/thumb-code-2.jpg" alt="검색 구조 개선 작업사진" loading="lazy"></figure>
+            <figure><img src="assets/thumb-code-3.jpg" alt="검색엔진 코드 최적화 작업사진" loading="lazy"></figure>
+            <figure><img src="assets/thumb-code-4.jpg" alt="검색광고 노출 관리 작업사진" loading="lazy"></figure>
           </div>
           <div class="work-card__body">
             <span class="work-card__num">04 · CODE SEO</span><h3>코드최적화</h3>
-            <p>페이지 구조와 핵심 키워드를 알맞게 구성해 검색엔진이 홈페이지의 주제를 더 정확히 이해하도록 돕습니다.</p>
-            <div class="work-card__tags"><span>HTML 구조</span><span>키워드 설계</span><span>사이트맵</span></div>
+            <p>페이지 구조와 핵심 키워드를 알맞게 구성해 검색엔진의 이해도를 높이고 키워드 상위노출을 위한 기반을 다집니다.</p>
+            <div class="work-card__tags"><span>HTML 구조</span><span>키워드 상위노출</span><span>사이트맵</span></div>
             <span class="work-card__link">작업 상세페이지 보기</span>
           </div>
         </a>
         <a class="work-card reveal" href="homepage.html" aria-label="홈페이지 제작 작업 상세페이지로 이동">
-          <div class="work-card__gallery">
-            <figure><img src="assets/homepage-1.png" alt="반응형 홈페이지 제작 작업사진" loading="lazy"></figure>
-            <figure><img src="assets/homepage-2.png" alt="홈페이지 디자인 작업사진" loading="lazy"></figure>
-            <figure><img src="assets/homepage-3.png" alt="홈페이지 제작 사례 작업사진" loading="lazy"></figure>
+          <div class="work-card__gallery is-quad">
+            <figure><img src="assets/thumb-homepage-1.jpg" alt="반응형 홈페이지 제작 작업사진" loading="lazy"></figure>
+            <figure><img src="assets/thumb-homepage-2.jpg" alt="홈페이지 디자인 작업사진" loading="lazy"></figure>
+            <figure><img src="assets/thumb-homepage-3.jpg" alt="홈페이지 제작 사례 작업사진" loading="lazy"></figure>
+            <figure><img src="assets/thumb-homepage-4.jpg" alt="반응형 홈페이지 제작 사례 작업사진" loading="lazy"></figure>
           </div>
           <div class="work-card__body">
             <span class="work-card__num">05 · WEBSITE</span><h3>홈페이지</h3>
@@ -1045,39 +1058,26 @@
   </section>
 
 
-  <!-- ================= LOCAL BAND ================= -->
-  <section id="local" class="local-band">
-    <div class="container local-inner">
-      <div class="reveal">
-        <span class="eyebrow">LOCAL FOCUS</span>
-        <h2>대전 · 세종 · 충청권,<br>지역 광고는 마케팅천재</h2>
-        <p class="lead">대전마케팅 1인 프리랜서가 대전바이럴마케팅, 대전온라인마케팅, 대전블로그마케팅을 업종과 목표에 맞춰 직접 진행합니다.</p>
-        <div class="chip-grid">
-          <span class="chip">대전마케팅</span>
-          <span class="chip">대전병원마케팅</span>
-          <span class="chip">대전소상공인마케팅</span>
-          <span class="chip">블로그운영관리</span>
-          <span class="chip">대전바이럴마케팅</span>
-          <span class="chip">대전블로그마케팅</span>
-          <span class="chip">대전온라인마케팅</span>
+  <!-- ================= DIFFERENCE ================= -->
+  <section id="difference" class="difference">
+    <div class="container difference-inner">
+      <div class="difference-question reveal">
+        <div>
+          <span class="eyebrow">THE DIFFERENCE</span>
+          <h2>합리적인 비용으로,<br>충분한 효과를<br>만들 수 있을까요?</h2>
         </div>
+        <span class="difference-mark">QUESTION 01</span>
       </div>
-      <div class="reveal">
-        <svg class="skyline" viewBox="0 0 480 220" aria-hidden="true">
-          <rect x="20" y="120" width="34" height="90" fill="#173561"/>
-          <rect x="64" y="90" width="30" height="120" fill="#1B3D6D"/>
-          <rect x="104" y="140" width="26" height="70" fill="#173561"/>
-          <rect x="140" y="60" width="20" height="150" fill="#22406E"/>
-          <rect x="170" y="100" width="34" height="110" fill="#1B3D6D"/>
-          <rect x="214" y="30" width="14" height="180" fill="#3FC7E0" opacity=".85"/>
-          <circle cx="221" cy="20" r="9" fill="#3FC7E0" opacity=".85"/>
-          <rect x="238" y="110" width="30" height="100" fill="#173561"/>
-          <rect x="278" y="70" width="24" height="140" fill="#1B3D6D"/>
-          <rect x="312" y="130" width="34" height="80" fill="#173561"/>
-          <rect x="356" y="95" width="26" height="115" fill="#22406E"/>
-          <rect x="392" y="145" width="30" height="65" fill="#173561"/>
-          <rect x="432" y="105" width="24" height="105" fill="#1B3D6D"/>
-        </svg>
+      <div class="difference-answer reveal">
+        <span class="answer-label">MY ANSWER</span>
+        <p>광고주마다 필요한 마케팅 작업은 다릅니다. 예산과 목표, 현재 노출 상태를 먼저 살핀 뒤 불필요한 항목은 제외하고 성과에 필요한 작업만 제안합니다.</p>
+        <p>합리적인 견적 안에서 블로그·인스타그램·카페·홈페이지를 목적에 맞게 연결하여 실제 유입과 문의로 이어질 수 있도록 직접 진행합니다.</p>
+        <div class="difference-points" aria-label="차이점 핵심 요약">
+          <span>합리적인 견적</span>
+          <span>맞춤형 구성</span>
+          <span>직접 진행</span>
+          <span>효과 중심</span>
+        </div>
       </div>
     </div>
   </section>

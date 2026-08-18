@@ -18,34 +18,99 @@
     .head{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px} .brand{font-size:20px;font-weight:950;color:var(--blue)}
     nav{display:flex;gap:8px;flex-wrap:wrap} nav a{font-size:13px;font-weight:750;color:#526178;padding:8px 11px;border-radius:999px;transition:.25s}
     nav a:hover,nav a[aria-current="page"]{color:#fff;background:var(--blue)}
+    .intro{min-height:100svh;display:grid;place-items:center;position:relative;overflow:hidden;background:#061426;color:#fff;padding:70px 20px}
+    .intro::before,.intro::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+    .intro::before{width:min(68vw,820px);height:min(68vw,820px);right:-24vw;top:-32vw;background:radial-gradient(circle,rgba(69,200,223,.2),rgba(23,75,145,.08) 48%,transparent 70%);animation:introGlow 5s ease-in-out infinite alternate}
+    .intro::after{width:520px;height:520px;left:-330px;bottom:-320px;border:1px solid rgba(69,200,223,.2);box-shadow:0 0 0 75px rgba(69,200,223,.025),0 0 0 150px rgba(69,200,223,.018)}
+    .intro-inner{width:min(1040px,100%);position:relative;z-index:1}
+    .intro-kicker{display:flex;align-items:center;gap:12px;margin-bottom:26px;font-size:12px;font-weight:850;letter-spacing:.16em;color:#85DDEB;opacity:0;animation:introUp .7s .1s forwards}
+    .intro-kicker::before{content:"";width:36px;height:2px;background:var(--sky)}
+    .intro-title{margin:0;max-width:980px;color:#fff;font-size:clamp(38px,6.2vw,78px);line-height:1.24;letter-spacing:-.055em;font-weight:950;text-wrap:balance}
+    .intro-title .line{display:block;opacity:0;transform:translateY(34px);animation:introUp .72s cubic-bezier(.22,1,.36,1) forwards}
+    .intro-title .line + .line{margin-top:.08em}
+    .intro-title .line:nth-child(1){animation-delay:.28s}
+    .intro-title .line:nth-child(2){animation-delay:.66s}
+    .intro-title .line:nth-child(3){animation-delay:1.04s}
+    .intro-title .line:nth-child(4){animation-delay:1.34s}
+    .intro-title .accent{display:inline-block;position:relative;color:#79DCEB}
+    .intro-title .accent::after{content:"";position:absolute;left:0;right:0;bottom:-.11em;height:.075em;border-radius:99px;background:var(--sky);transform:scaleX(0);transform-origin:left;animation:introLine .7s 1.62s forwards}
+    .intro-plus{display:inline-grid;place-items:center;width:.82em;height:.82em;margin:0 .12em;border-radius:50%;background:#fff;color:var(--blue);font-size:.72em;vertical-align:.08em;box-shadow:0 0 0 0 rgba(69,200,223,.4);animation:introPulse 2.3s 1.8s infinite}
+    .intro-hello{margin:42px 0 0;font-size:clamp(18px,2.3vw,26px);font-weight:750;color:#D3E0EF;opacity:0;transform:translateY(18px);animation:introUp .7s 1.95s forwards}
+    .intro-hello strong{color:#fff;font-weight:950}
+    .intro-button{display:inline-flex;align-items:center;gap:12px;margin-top:32px;padding:14px 20px;border:1px solid rgba(255,255,255,.22);border-radius:999px;color:#fff;font-size:13px;font-weight:850;opacity:0;transform:translateY(18px);animation:introUp .7s 2.15s forwards;transition:.25s}
+    .intro-button::after{content:"↓";display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--sky);color:var(--ink)}
+    .intro-button:hover{background:#fff;color:var(--ink);transform:translateY(-3px)}
+    @keyframes introUp{to{opacity:1;transform:translateY(0)}}
+    @keyframes introLine{to{transform:scaleX(1)}}
+    @keyframes introGlow{to{transform:translate(-3%,6%) scale(1.08)}}
+    @keyframes introPulse{0%,100%{box-shadow:0 0 0 0 rgba(69,200,223,.38)}50%{box-shadow:0 0 0 13px rgba(69,200,223,0)}}
     .hero{padding:110px 0 100px;background:radial-gradient(circle at 85% 10%,rgba(69,200,223,.2),transparent 35%),linear-gradient(145deg,#F7FAFD,#E9F1FA)}
     .hero-copy{max-width:850px} .eyebrow{display:inline-flex;padding:7px 12px;border-radius:999px;background:#fff;color:var(--blue);font-size:11px;font-weight:850;letter-spacing:.12em;box-shadow:0 8px 30px -20px var(--ink)}
-    h1{font-size:clamp(40px,6vw,72px);line-height:1.1;letter-spacing:-.055em;margin:22px 0;color:var(--ink)} .lead{max-width:760px;font-size:19px;color:#53647C}
+    h1,.hero h2{font-size:clamp(40px,6vw,72px);line-height:1.1;letter-spacing:-.055em;margin:22px 0;color:var(--ink)} .lead{max-width:760px;font-size:19px;color:#53647C}
     .portfolio{padding:100px 0;background:#0A1B33} .portfolio-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:38px;color:#fff}
-    .portfolio-head h2{margin:0;font-size:clamp(30px,4vw,48px);letter-spacing:-.035em} .portfolio-head p{margin:0;max-width:420px;color:#9FB2CC}
-    .gallery{columns:3 280px;column-gap:18px} .gallery figure{margin:0 0 18px;break-inside:avoid;border-radius:18px;overflow:hidden;background:#fff;border:1px solid rgba(255,255,255,.12);box-shadow:0 24px 55px -30px #000}
-    .gallery img{display:block;width:100%;height:auto;background:#fff;transition:transform .4s} .gallery figure:hover img{transform:scale(1.015)}
+    .portfolio-head h2{margin:0;font-size:clamp(30px,4vw,48px);letter-spacing:-.035em}
+    .slider{position:relative;border:1px solid rgba(255,255,255,.12);border-radius:28px;background:#071426;padding:22px;box-shadow:0 30px 80px -45px #000}
+    .slider-viewport{overflow:hidden;border-radius:20px} .slider-track{display:flex;transition:transform .48s cubic-bezier(.22,1,.36,1);touch-action:pan-y}
+    .slider-slide{position:relative;overflow:hidden;min-width:100%;height:min(72vh,780px);display:grid;place-items:center;padding:24px;background:#102A4D}
+    .slider-slide figure{margin:0;width:100%;height:100%;display:grid;place-items:center} .slider-slide img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:15px;box-shadow:0 22px 65px -32px #000}
+    .slider-slide:not(.case-slide){height:auto;aspect-ratio:1/1;padding:0}
+    .slider-slide:not(.case-slide) figure,.slider-slide:not(.case-slide) img{width:100%;height:100%;max-width:none;max-height:none}
+    .slider-slide:not(.case-slide) img{object-fit:fill;border-radius:0;box-shadow:none}
+    .slider-button{position:absolute;z-index:3;top:50%;transform:translateY(-50%);width:48px;height:48px;border:0;border-radius:50%;background:rgba(255,255,255,.95);color:var(--ink);font-size:24px;font-weight:900;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.22)}
+    .slider-prev{left:34px} .slider-next{right:34px} .slider-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 4px 0}
+    .slider-dots{display:flex;gap:7px;flex-wrap:wrap} .slider-dot{width:9px;height:9px;padding:0;border:0;border-radius:999px;background:#536984;cursor:pointer;transition:.3s} .slider-dot.is-active{width:28px;background:var(--sky)}
+    .slider-count{color:#B8C7DA;font-size:13px;font-weight:750} .case-slide{height:auto;min-height:680px;padding:30px}
+    .case{width:100%;max-width:1000px;padding:22px;border:1px solid rgba(255,255,255,.18);border-radius:22px;background:rgba(7,20,38,.82);backdrop-filter:blur(8px)}
+    .case-title{display:block;margin:0 0 16px;color:#fff;font-size:19px;font-weight:850} .case-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .case-pair figure{margin:0;overflow:hidden;border-radius:14px} .case-pair img{display:block;width:100%;height:auto} .case-label{display:block;margin-top:9px;color:#D4E2F2;font-size:12px;text-align:center}
     .content{padding:100px 0;background:#fff} .content h2{font-size:clamp(30px,4vw,46px);letter-spacing:-.035em;line-height:1.3;margin:0 0 42px;color:var(--ink)}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px} .card{border:1px solid var(--line);border-radius:22px;padding:34px;background:linear-gradient(145deg,#fff,var(--mist));box-shadow:0 18px 45px -36px var(--ink)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px} .card{border:1px solid var(--line);border-radius:22px;padding:34px;background:linear-gradient(145deg,#fff,var(--mist));box-shadow:0 18px 45px -36px var(--ink)}
     .card b{display:block;font-size:20px;color:var(--ink);margin-bottom:11px} .card p{margin:0;color:var(--soft);font-size:15px}
     .next{padding:70px 0;background:var(--mist)} .next h2{margin:0 0 24px;color:var(--ink);font-size:28px} .next-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
     .next-grid a{padding:18px 14px;border-radius:15px;background:#fff;border:1px solid var(--line);font-weight:800;text-align:center;transition:.25s} .next-grid a:hover{color:#fff;background:var(--blue);transform:translateY(-4px)}
     .cta{padding:76px 0;background:linear-gradient(135deg,#102C52,#0A1B33);color:white;text-align:center} .cta h2{font-size:34px;margin:0 0 12px} .cta p{margin:0 0 26px;color:#B9C8DC}
     .button{display:inline-block;background:var(--sky);color:var(--ink);font-weight:900;padding:14px 24px;border-radius:999px}
     footer{padding:38px 0;background:#061224;color:#9EB0CA;font-size:13px} .footer-links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px} .footer-links a{color:#DFF6FA}
-    @media(max-width:760px){.head{padding:15px 0;align-items:flex-start;flex-direction:column}nav{gap:5px}nav a{padding:6px 8px}.hero{padding:70px 0}.portfolio{padding:70px 0}.portfolio-head{align-items:start;flex-direction:column}.gallery{columns:2 140px;column-gap:10px}.gallery figure{margin-bottom:10px;border-radius:12px}.grid{grid-template-columns:1fr}.next-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:760px){.intro{padding:58px 20px}.intro-kicker{margin-bottom:20px}.intro-title{font-size:clamp(35px,11vw,54px);line-height:1.22}.intro-title .line{margin-bottom:.08em}.intro-hello{margin-top:28px}.intro-button{margin-top:26px}.head{padding:15px 0;align-items:flex-start;flex-direction:column}nav{gap:5px}nav a{padding:6px 8px}.hero{padding:70px 0}.portfolio{padding:70px 0}.portfolio-head{align-items:start;flex-direction:column}.slider{padding:10px;border-radius:18px}.slider-viewport{border-radius:12px}.slider-slide{height:64vh;max-height:650px;padding:10px}.slider-button{width:40px;height:40px;font-size:20px}.slider-prev{left:16px}.slider-next{right:16px}.case-slide{height:auto;min-height:0;padding:12px}.case{padding:12px}.case-pair{grid-template-columns:1fr;gap:12px}.grid{grid-template-columns:1fr}.next-grid{grid-template-columns:1fr 1fr}}
+    @media(prefers-reduced-motion:reduce){.intro *{animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important}.intro::before{animation:none}}
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"대전 홈페이지 제작 | 반응형 웹페이지·검색 구조","description":"대전마케팅에 활용할 반응형 홈페이지를 1인 프리랜서가 직접 기획하고 제작합니다. 모바일 화면, 상담 동선과 검색 친화적 구조를 함께 구성합니다.","url":"https://marketing-genius.wngkgus.workers.dev/homepage.html","isPartOf":{"@type":"WebSite","name":"마케팅천재","url":"https://marketing-genius.wngkgus.workers.dev/"}}</script>
 </head>
 <body>
-  <header><div class="container head"><a class="brand" href="index.html">마케팅천재</a><nav aria-label="세부 작업"><a href="blog.html">블로그</a><a href="instagram.html">인스타</a><a href="cafe.html">카페</a><a href="code-seo.html">코드최적화</a><a href="homepage.html" aria-current="page">홈페이지</a></nav></div></header>
-  <main>
-    <section class="hero"><div class="container hero-copy"><span class="eyebrow">홈페이지 · 1인 프리랜서 직접 진행</span><h1>보여주기와 검색을 함께 고려한 홈페이지</h1><p class="lead">홈페이지는 소개 화면이면서 검색과 상담이 시작되는 공간입니다. 필요한 정보를 빠르게 찾고 연락까지 이어지도록 구조를 설계합니다.</p></div></section>
-    <section class="portfolio"><div class="container"><div class="portfolio-head"><h2>실제 작업 포트폴리오</h2><p>사진을 자르거나 억지로 늘리지 않고 원본 비율 그대로 정돈했습니다.</p></div><div class="gallery"><figure><img src="assets/homepage-1.png" alt="반응형 홈페이지 제작 작업사진 1" loading="lazy"></figure><figure><img src="assets/homepage-2.png" alt="반응형 홈페이지 제작 작업사진 2" loading="lazy"></figure><figure><img src="assets/homepage-3.png" alt="반응형 홈페이지 제작 작업사진 3" loading="lazy"></figure><figure><img src="assets/homepage-4.png" alt="반응형 홈페이지 제작 작업사진 4" loading="lazy"></figure><figure><img src="assets/homepage-5.png" alt="반응형 홈페이지 제작 작업사진 5" loading="lazy"></figure></div></div></section>
+  <section class="intro" aria-labelledby="intro-title">
+    <div class="intro-inner">
+      <div class="intro-kicker">HOMEPAGE · SEARCH EXPOSURE</div>
+      <h1 class="intro-title" id="intro-title">
+        <span class="line">블로그 관리대행 가격으로</span>
+        <span class="line"><span class="accent">홈페이지 제작·관리</span><span class="intro-plus">+</span></span>
+        <span class="line"><span class="accent">키워드 상위노출까지</span></span>
+        <span class="line">해주는 사람이 있다?</span>
+      </h1>
+      <p class="intro-hello">안녕하세요. <strong>마케팅천재</strong>입니다.</p>
+      <a class="intro-button" href="#homepage-main">직접 확인해 보세요</a>
+    </div>
+  </section>
+  <header><div class="container head"><a class="brand" href="index.html">마케팅천재</a><nav aria-label="세부 작업"><a href="blog.html">블로그</a><a href="instagram.html">인스타&스레드</a><a href="cafe.html">카페</a><a href="code-seo.html">코드최적화</a><a href="homepage.html" aria-current="page">홈페이지</a></nav></div></header>
+  <main id="homepage-main">
+    <section class="hero"><div class="container hero-copy"><span class="eyebrow">홈페이지 · 1인 프리랜서 직접 진행</span><h2>디자인은 물론 검색까지 함께 고려한 홈페이지</h2><p class="lead">홈페이지는 소개 화면이면서 검색과 상담이 시작되는 공간입니다. 필요한 정보를 빠르게 찾고 연락까지 이어지도록 구조를 설계합니다.</p></div></section>
+    <section class="portfolio"><div class="container"><div class="portfolio-head"><h2>실제 작업 포트폴리오</h2></div><div class="slider" data-slider><div class="slider-viewport"><div class="slider-track"><div class="slider-slide" style="--slide-bg:url(assets/homepage-1.png)"><figure><img src="assets/homepage-1.png" alt="반응형 홈페이지 제작 작업사진 1" loading="lazy"></figure></div><div class="slider-slide" style="--slide-bg:url(assets/homepage-2.png)"><figure><img src="assets/homepage-2.png" alt="반응형 홈페이지 제작 작업사진 2" loading="lazy"></figure></div><div class="slider-slide" style="--slide-bg:url(assets/homepage-3.png)"><figure><img src="assets/homepage-3.png" alt="반응형 홈페이지 제작 작업사진 3" loading="lazy"></figure></div><div class="slider-slide" style="--slide-bg:url(assets/homepage-4.png)"><figure><img src="assets/homepage-4.png" alt="반응형 홈페이지 제작 작업사진 4" loading="lazy"></figure></div><div class="slider-slide" style="--slide-bg:url(assets/homepage-5.png)"><figure><img src="assets/homepage-5.png" alt="반응형 홈페이지 제작 작업사진 5" loading="lazy"></figure></div></div></div><button class="slider-button slider-prev" type="button" aria-label="이전 사진">‹</button><button class="slider-button slider-next" type="button" aria-label="다음 사진">›</button><div class="slider-footer"><div class="slider-dots"><button class="slider-dot is-active" type="button" aria-label="1번 사진"></button><button class="slider-dot" type="button" aria-label="2번 사진"></button><button class="slider-dot" type="button" aria-label="3번 사진"></button><button class="slider-dot" type="button" aria-label="4번 사진"></button><button class="slider-dot" type="button" aria-label="5번 사진"></button></div><span class="slider-count">1 / 5</span></div></div></div></section>
     <section class="content"><div class="container"><h2>홈페이지 작업의 핵심 장점</h2><div class="grid"><article class="card"><b>반응형 화면</b><p>PC와 모바일 크기에 맞춰 글자와 이미지, 버튼이 자연스럽게 배치되도록 제작합니다.</p></article><article class="card"><b>상담 동선 설계</b><p>서비스 장점과 진행 방식, 자주 묻는 질문을 순서대로 보여주고 전화와 카카오톡 연결을 분명하게 둡니다.</p></article><article class="card"><b>검색 기반 구성</b><p>페이지별 제목과 설명, 핵심 주제와 내부 링크를 설계해 대전온라인마케팅의 기반을 마련합니다.</p></article></div></div></section>
-    <section class="next"><div class="container"><h2>다른 작업 페이지 둘러보기</h2><div class="next-grid"><a href="blog.html">블로그</a><a href="instagram.html">인스타</a><a href="cafe.html">카페</a><a href="code-seo.html">코드최적화</a><a href="homepage.html" aria-current="page">홈페이지</a></div></div></section>
+    <section class="next"><div class="container"><h2>다른 작업 페이지 둘러보기</h2><div class="next-grid"><a href="blog.html">블로그</a><a href="instagram.html">인스타&스레드</a><a href="cafe.html">카페</a><a href="code-seo.html">코드최적화</a><a href="homepage.html" aria-current="page">홈페이지</a></div></div></section>
     <section class="cta"><div class="container"><h2>목표에 맞는 방향부터 상담하세요</h2><p>상담부터 실행까지 한 사람이 직접 확인하고 진행합니다.</p><a class="button" href="tel:010-2719-5334">전화 상담 010-2719-5334</a></div></section>
   </main>
-  <footer><div class="container"><div class="footer-links"><a href="index.html">대전마케팅</a><a href="blog.html">블로그</a><a href="instagram.html">인스타</a><a href="cafe.html">카페</a><a href="code-seo.html">코드최적화</a><a href="homepage.html" aria-current="page">홈페이지</a></div><div>대전바이럴마케팅 · 대전온라인마케팅 · 대전블로그마케팅</div></div></footer>
+  <footer><div class="container"><div class="footer-links"><a href="index.html">대전마케팅</a><a href="blog.html">블로그</a><a href="instagram.html">인스타&스레드</a><a href="cafe.html">카페</a><a href="code-seo.html">코드최적화</a><a href="homepage.html" aria-current="page">홈페이지</a></div><div>대전바이럴마케팅 · 대전온라인마케팅 · 대전블로그마케팅</div></div></footer>
+  <script>
+    document.querySelectorAll('[data-slider]').forEach(slider => {
+      const track=slider.querySelector('.slider-track'),slides=[...slider.querySelectorAll('.slider-slide')],dots=[...slider.querySelectorAll('.slider-dot')],count=slider.querySelector('.slider-count');
+      let index=0,startX=0;
+      const show=n=>{index=(n+slides.length)%slides.length;track.style.transform='translateX(-'+(index*100)+'%)';dots.forEach((d,i)=>d.classList.toggle('is-active',i===index));count.textContent=(index+1)+' / '+slides.length;};
+      slider.querySelector('.slider-prev').addEventListener('click',()=>show(index-1));
+      slider.querySelector('.slider-next').addEventListener('click',()=>show(index+1));
+      dots.forEach((dot,i)=>dot.addEventListener('click',()=>show(i)));
+      track.addEventListener('touchstart',e=>startX=e.touches[0].clientX,{passive:true});
+      track.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-startX;if(Math.abs(dx)>45)show(index+(dx<0?1:-1));},{passive:true});
+      show(0);
+    });
+  </script>
 </body>
 </html>
