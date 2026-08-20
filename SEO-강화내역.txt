@@ -1,0 +1,26 @@
+네이버 서브링크/이미지 노출을 위한 구조 강화
+
+- 주요 서비스 내부링크 앵커명 통일: 홈페이지 / SNS / 코드최적화 / 블로그 / 카페
+- 전 HTML에 주요 서비스 ItemList 구조 데이터 추가
+- 서비스 페이지별 고유 og:image 및 twitter:image 추가
+- 지역 랜딩페이지 og:image 추가
+- sitemap.xml lastmod 갱신
+- 기존 지역별 title/description/canonical 유지
+
+주의: 네이버 서브링크와 검색 썸네일은 검색엔진이 자동 결정하므로 노출 자체를 보장할 수 없습니다.
+
+blog.html: nav_schema=OK, og_image=OK
+busan-online-marketing.html: nav_schema=OK, og_image=OK
+cafe.html: nav_schema=OK, og_image=OK
+cheongju-online-marketing.html: nav_schema=OK, og_image=OK
+chungju-online-marketing.html: nav_schema=OK, og_image=OK
+code-seo.html: nav_schema=OK, og_image=OK
+daegu-online-marketing.html: nav_schema=OK, og_image=OK
+daejeon-online-marketing.html: nav_schema=OK, og_image=OK
+homepage.html: nav_schema=OK, og_image=OK
+index.html: nav_schema=OK, og_image=-
+instagram.html: nav_schema=OK, og_image=OK
+pyeongtaek-online-marketing.html: nav_schema=OK, og_image=OK
+sejong-online-marketing.html: nav_schema=OK, og_image=OK
+seoul-online-marketing.html: nav_schema=OK, og_image=OK
+suwon-online-marketing.html: nav_schema=OK, og_image=OK
