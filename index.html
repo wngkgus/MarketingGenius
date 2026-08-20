@@ -918,6 +918,34 @@ body.home-premium .service-tile{position:relative;overflow:hidden}body.home-prem
 /* v22: keep main section titles Korean-left / English-label-right */
 @media(min-width:761px){.section-head:not(.center){grid-template-areas:"title label" "desc label"}}
 </style>
+
+<style id="mobile-why-clean-fix-v25">
+@media (max-width:760px){
+  #why .why-grid{display:flex!important;flex-direction:column!important;gap:38px!important;}
+  #why .why-visual.motion-dashboard{
+    position:relative!important;top:auto!important;width:100%!important;
+    min-height:0!important;height:auto!important;box-sizing:border-box!important;
+    padding:22px 20px 26px!important;margin:0!important;overflow:hidden!important;
+    border-radius:24px!important;flex:none!important;
+  }
+  #why .dash-top{margin-bottom:18px!important;}
+  #why .trend-stage{height:132px!important;}
+  #why .metric-row{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important;margin-top:14px!important;}
+  #why .metric-mini{min-width:0!important;padding:10px 7px!important;}
+  #why .metric-mini b{font-size:11.5px!important;line-height:1.35!important;white-space:nowrap!important;}
+  #why .metric-mini span{font-size:8px!important;margin-top:5px!important;}
+  #why .dash-caption{display:block!important;position:relative!important;margin:18px 0 0!important;padding:0!important;font-size:12px!important;line-height:1.65!important;}
+  #why .why-grid > div:nth-child(2){position:relative!important;display:block!important;margin:0!important;padding:0!important;background:transparent!important;z-index:auto!important;}
+  #why .section-head{position:relative!important;margin:0 0 32px!important;padding:0!important;transform:none!important;}
+  #why .section-head>.eyebrow{position:static!important;display:inline-flex!important;margin:0 0 14px!important;transform:none!important;}
+  #why .section-head h2{position:relative!important;margin:0 0 18px!important;line-height:1.15!important;transform:none!important;}
+  #why .section-head p{margin:0!important;}
+}
+@media (max-width:390px){
+  #why .why-visual.motion-dashboard{padding-left:16px!important;padding-right:16px!important;}
+  #why .metric-mini b{font-size:10.5px!important;}
+}
+</style>
 </head>
 <body class="home-premium">
 
@@ -1538,44 +1566,3 @@ body.home-premium .service-tile{position:relative;overflow:hidden}body.home-prem
 </script>
 </body>
 </html>
-<style id="mobile-why-fix-v24">
-/* Mobile-only correction for WHY dashboard overlap. Desktop and all other sections remain unchanged. */
-@media (max-width:760px){
-  #why .why-grid{display:block!important;}
-  #why .why-visual.motion-dashboard{
-    min-height:0!important;
-    height:auto!important;
-    padding:22px 20px 24px!important;
-    margin:0 0 54px!important;
-    overflow:hidden!important;
-    border-radius:24px!important;
-  }
-  #why .dash-top{margin-bottom:18px!important;}
-  #why .trend-stage{height:132px!important;}
-  #why .metric-row{gap:7px!important;margin-top:14px!important;}
-  #why .metric-mini{min-width:0!important;padding:10px 8px!important;}
-  #why .metric-mini b{font-size:12px!important;white-space:nowrap!important;}
-  #why .metric-mini span{font-size:8px!important;}
-  #why .dash-caption{
-    position:relative!important;
-    margin:18px 0 0!important;
-    padding:0!important;
-    font-size:12px!important;
-    line-height:1.65!important;
-    overflow-wrap:anywhere!important;
-  }
-  #why .section-head{
-    position:relative!important;
-    clear:both!important;
-    margin:0!important;
-    padding:0!important;
-  }
-  #why .section-head>.eyebrow{margin:0 0 12px!important;}
-  #why .section-head h2{margin:0 0 14px!important;line-height:1.15!important;}
-  #why .section-head p{margin:0!important;}
-}
-@media (max-width:390px){
-  #why .why-visual.motion-dashboard{padding-left:16px!important;padding-right:16px!important;}
-  #why .metric-mini b{font-size:11px!important;}
-}
-</style>
