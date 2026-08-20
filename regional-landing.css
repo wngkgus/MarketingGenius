@@ -12,7 +12,7 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}h1,h2,h3,p
 .wrap{width:min(1180px,calc(100% - 40px));margin:0 auto}
 .site-header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(20,70,140,.1)}
 .header-inner{height:72px;display:flex;align-items:center;justify-content:space-between;gap:22px}
-.brand{font-weight:900;font-size:20px;letter-spacing:-.04em;color:var(--ink);display:flex;align-items:center;gap:9px}.brand-mark{display:grid;place-items:center;width:28px;height:28px;border-radius:9px;background:linear-gradient(140deg,var(--blue),var(--sky));color:white;font-size:15px}
+.brand{font-weight:900;font-size:20px;letter-spacing:-.04em;color:var(--ink);display:flex;align-items:center;gap:9px}.brand-mark{display:grid;place-items:center;width:28px;height:28px;border-radius:9px;background:linear-gradient(140deg,var(--blue),var(--sky));color:white;font-size:12px;font-weight:800;letter-spacing:-.06em}
 .header-links{display:flex;align-items:center;gap:20px;font-size:14px;font-weight:750;color:var(--soft)}.header-links a:hover{color:var(--blue)}
 .header-call{display:inline-flex;align-items:center;border-radius:999px;padding:9px 13px;background:var(--ink);color:#fff;font-size:13px;font-weight:800;white-space:nowrap}
 .hero{overflow:hidden;position:relative;background:linear-gradient(130deg,#F7FBFF 0%,#E9F5FF 54%,#DDF7FB 100%);padding:88px 0 74px}.hero::after{content:"";width:420px;height:420px;border:58px solid rgba(63,199,224,.13);border-radius:50%;position:absolute;right:-170px;top:-165px}
@@ -241,3 +241,23 @@ body{overflow-x:hidden}.hero,.section{position:relative;isolation:isolate}.hero{
 .entry-intro .entry-sub,.entry-intro .entry-note{margin-left:auto!important;margin-right:auto!important;}
 .entry-intro .entry-button{margin-left:auto!important;margin-right:auto!important;}
 @media(max-width:640px){.entry-intro .entry-title .line:first-child{display:inline-block!important;width:auto!important;}.entry-intro .entry-title{width:100%!important;}}
+
+/* v13: restored premium intro + cleaner regional hero typography */
+.hero-copy h1{max-width:760px;font-size:clamp(38px,4.8vw,68px)!important;line-height:1.12!important;letter-spacing:-.055em!important;text-wrap:balance!important;word-break:keep-all!important}
+.hero-copy>p{max-width:720px!important;line-height:1.85!important}
+.entry-sub{max-width:760px;margin:34px auto 0;font-size:clamp(16px,1.5vw,21px);line-height:1.7;color:rgba(235,247,255,.82);word-break:keep-all}
+.entry-note{margin:12px auto 0;font-size:14px;color:#75dceb;font-weight:750;letter-spacing:.02em}
+.entry-intro .entry-inner{width:min(1180px,100%);text-align:center}
+.entry-intro .entry-title{max-width:1180px}
+.entry-intro .entry-title .line:first-child{margin-left:auto!important;margin-right:auto!important}
+.hero{position:relative}.hero-copy,.hero-panel{position:relative;z-index:2}
+@media(max-width:760px){.hero-copy h1{font-size:clamp(34px,10vw,52px)!important}.entry-sub br{display:none}.entry-sub{font-size:15px;margin-top:26px}.entry-note{font-size:12px}}
+
+/* v22: Korean title left / English label right — requested layout only */
+.swap-label-row{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:11px}
+.swap-label-row h3{margin:0!important;min-width:0}
+.swap-label-row .eyebrow{flex:0 0 auto;justify-content:flex-end;text-align:right;margin-top:4px}
+.method-label-row{align-items:baseline;margin-bottom:9px}
+.method-label-row .method-no{flex:0 0 auto;text-align:right;white-space:nowrap}
+.method-label-row + p{margin-top:0}
+@media(max-width:560px){.swap-label-row{gap:12px}.swap-label-row .eyebrow{font-size:10px}.method-label-row .method-no{font-size:10px}}

@@ -28,7 +28,7 @@
     const ticker=document.createElement('div'); ticker.className='motion-ticker';
     const words=['HOMEPAGE','SNS MARKETING','CODE SEO','BLOG','CAFE','LOCAL SEARCH'];
     const set=words.map(w=>`<span>${w}</span>`).join('');
-    ticker.innerHTML=`<div class="motion-ticker__track">${set}${set}</div>`;
+    ticker.innerHTML=`<div class="motion-ticker__track"><div class="motion-ticker__group">${set}</div><div class="motion-ticker__group" aria-hidden="true">${set}</div></div>`;
     hero.insertAdjacentElement('afterend',ticker);
   }
 
@@ -84,4 +84,19 @@
       }, {passive:true});
     }
   });
+})();
+
+
+// v19: seamless ticker + basic source-view deterrence.
+(() => {
+  // Prevent the ordinary right-click context menu across all site pages.
+  // This is a deterrent only: browser-delivered HTML/CSS/JS cannot be made truly unviewable.
+  document.addEventListener('contextmenu', e => e.preventDefault(), {capture:true});
+  document.addEventListener('keydown', e => {
+    const k=(e.key||'').toLowerCase();
+    if (e.key === 'F12' || (e.ctrlKey && k === 'u') || (e.ctrlKey && e.shiftKey && ['i','j','c'].includes(k))) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  }, {capture:true});
 })();
