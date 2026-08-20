@@ -1538,3 +1538,44 @@ body.home-premium .service-tile{position:relative;overflow:hidden}body.home-prem
 </script>
 </body>
 </html>
+<style id="mobile-why-fix-v24">
+/* Mobile-only correction for WHY dashboard overlap. Desktop and all other sections remain unchanged. */
+@media (max-width:760px){
+  #why .why-grid{display:block!important;}
+  #why .why-visual.motion-dashboard{
+    min-height:0!important;
+    height:auto!important;
+    padding:22px 20px 24px!important;
+    margin:0 0 54px!important;
+    overflow:hidden!important;
+    border-radius:24px!important;
+  }
+  #why .dash-top{margin-bottom:18px!important;}
+  #why .trend-stage{height:132px!important;}
+  #why .metric-row{gap:7px!important;margin-top:14px!important;}
+  #why .metric-mini{min-width:0!important;padding:10px 8px!important;}
+  #why .metric-mini b{font-size:12px!important;white-space:nowrap!important;}
+  #why .metric-mini span{font-size:8px!important;}
+  #why .dash-caption{
+    position:relative!important;
+    margin:18px 0 0!important;
+    padding:0!important;
+    font-size:12px!important;
+    line-height:1.65!important;
+    overflow-wrap:anywhere!important;
+  }
+  #why .section-head{
+    position:relative!important;
+    clear:both!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  #why .section-head>.eyebrow{margin:0 0 12px!important;}
+  #why .section-head h2{margin:0 0 14px!important;line-height:1.15!important;}
+  #why .section-head p{margin:0!important;}
+}
+@media (max-width:390px){
+  #why .why-visual.motion-dashboard{padding-left:16px!important;padding-right:16px!important;}
+  #why .metric-mini b{font-size:11px!important;}
+}
+</style>
