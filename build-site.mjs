@@ -121,6 +121,7 @@ function H(t, d, p = "", active = "") {
     ["서비스", "services.html"],
     ["지역별 마케팅", "regions.html"],
     ["업종별 마케팅", "industries.html"],
+    ["블로그 원고 작성", "blog-writing.html"],
     ["포트폴리오", "portfolio.html"],
     ["소개", "about.html"],
   ];
@@ -137,7 +138,11 @@ function home() {
     "블로그, 카페, SNS, 홈페이지 제작과 검색 최적화를 상담부터 실행까지 직접 진행하는 8년 경력 1인 프리랜서입니다.";
   return (
     H("온라인 마케팅 1인 프리랜서 마케팅천재 | 전국 상담", d) +
-    `<section class="hero home-visual"><div class="visual-bg"><img src="assets/homepage-1.png" alt=""></div><div class="wrap visual-copy"><span>MARKETING GENIUS</span><h1>검색에서 상담까지,<br>직접 만드는 마케팅</h1><p>8년 경력 1인 프리랜서의 온라인 마케팅</p></div></section><section class="work-section"><div class="wrap"><div class="center-head"><h2>직접 진행하는 서비스</h2><p>상담한 사람이 기획하고, 만들고, 운영합니다.</p></div>${cards(S.map((x) => ({ ...x, href: x.slug + ".html" })))}</div></section><section class="creation-section"><div class="wrap"><div class="center-head"><h2>직접 만든 작업</h2><p>말보다 결과물로 보여드리는 실제 작업입니다.</p></div><div class="creation-tabs">${G.map(g=>`<a href="portfolio.html#work-${g.key}">${g.name}</a>`).join("")}</div><div class="creation-grid">${G.flatMap(g=>g.files.slice(0,2).map((file,i)=>`<a class="creation-item reveal" href="portfolio.html#work-${g.key}"><img src="assets/${file}" alt="${g.name} 작업 사례"><div><b>${g.name}</b><span>${g.desc}</span></div></a>`)).slice(0,8).join("")}</div><a class="creation-more" href="portfolio.html">더보기 +</a></div></section>` +
+    `<section class="hero home-visual"><div class="video-pair"><video autoplay muted loop playsinline src="assets/hero-video-1.mp4"></video><video autoplay muted loop playsinline src="assets/hero-video-2.mp4"></video></div><div class="video-shade"></div><div class="wrap visual-copy"><span>MARKETING GENIUS</span><h1>검색에서 상담까지,<br>직접 만드는 마케팅</h1><p>8년 경력 1인 프리랜서의 온라인 마케팅</p></div></section>` +
+    `<section class="work-section"><div class="wrap"><div class="center-head"><h2>직접 진행하는 서비스</h2><p>상담한 사람이 기획하고, 만들고, 운영합니다.</p></div>${cards(S.map((x) => ({ ...x, href: x.slug + ".html" })))}</div></section>` +
+    `<section class="growth-section"><div class="wrap growth-layout"><div class="growth-copy reveal"><span>SEARCH GROWTH</span><h2>감이 아니라<br>흐름을 보고 움직입니다.</h2><p>검색 노출과 콘텐츠 반응을 살피고, 다음 작업에 반영합니다.</p><a href="seo-marketing.html">검색 최적화 살펴보기 →</a></div><div class="growth-board reveal"><div class="metric"><span>검색 유입</span><strong class="count-up" data-count="328">0</strong><i>%</i></div><svg viewBox="0 0 640 280" role="img" aria-label="검색 유입 성장 그래프"><defs><linearGradient id="line" x1="0" x2="1"><stop stop-color="#55d9ef"/><stop offset="1" stop-color="#5669ff"/></linearGradient></defs><path class="grid-line" d="M30 230H610M30 170H610M30 110H610M30 50H610"/><path class="growth-area" d="M35 235C100 225 118 202 170 210S245 166 300 178 380 105 430 126 515 58 606 45V245H35Z"/><path class="growth-line" d="M35 235C100 225 118 202 170 210S245 166 300 178 380 105 430 126 515 58 606 45"/><circle cx="606" cy="45" r="8"/></svg><div class="bar-row">${[38,52,47,69,63,82,96].map((n,i)=>`<i style="--h:${n}%;--d:${i*.08}s"></i>`).join("")}</div></div></div></section>` +
+    `<section class="creation-section"><div class="wrap"><div class="center-head"><h2>직접 만든 작업</h2><p>말보다 결과물로 보여드리는 실제 작업입니다.</p></div><div class="creation-tabs">${G.map(g=>`<a href="portfolio.html#work-${g.key}">${g.name}</a>`).join("")}</div><div class="creation-grid">${G.flatMap(g=>g.files.slice(0,2).map(file=>`<a class="creation-item reveal" href="portfolio.html#work-${g.key}"><img src="assets/${file}" alt="${g.name} 작업 사례"><div><b>${g.name}</b><span>${g.desc}</span></div></a>`)).slice(0,8).join("")}</div><a class="creation-more" href="portfolio.html">더보기 +</a></div></section>` +
+    `<section class="partner-section"><div class="center-head"><h2>협업·광고 진행 브랜드</h2><p>다양한 분야의 브랜드와 함께했습니다.</p></div><div class="logo-marquee"><div class="logo-track">${[0,1].map(()=>`<div class="logo-set">${Array.from({length:15},(_,i)=>`<div><img src="assets/partner-${String(i+1).padStart(2,'0')}.${i>12?'jpg':'png'}" alt="협업 브랜드 로고 ${i+1}"></div>`).join("")}</div>`).join("")}</div></div></section>` +
     F()
   );
 }
@@ -204,6 +209,12 @@ function detail(r, i = null) {
     F()
   );
 }
+function writingPage() {
+  const title = "블로그 원고 작성 | 상위노출 목적 원고 전문 마케팅천재";
+  const desc = "수많은 업종과 브랜드의 원고를 작성한 경험을 바탕으로 검색 상위노출 목적과 로직에 맞는 블로그 글을 작성합니다.";
+  return H(title, desc, "blog-writing.html", "blog-writing.html") +
+    `<section class="writing-hero"><div class="wrap writing-grid"><div><span class="kicker">BLOG WRITING</span><h1>읽히는 글을 넘어,<br><em>검색되는 원고</em>를 씁니다.</h1><p>수많은 업종과 브랜드의 원고를 작성해 왔으며, 누구보다 상위노출 목적과 검색 로직에 맞는 글을 작성하는 것이 가능합니다.</p><a class="btn primary" href="tel:${P}">원고 작성 상담</a></div><img src="assets/ai-service-blog.png" alt="블로그 원고 작성 작업 공간"></div></section><section class="writing-points"><div class="wrap"><div class="center-head"><h2>원고마다 목적이 달라야 합니다.</h2><p>업종과 키워드, 독자가 궁금해하는 내용을 먼저 분석합니다.</p></div>${cards([{name:"검색 의도 분석",desc:"키워드를 검색한 사람이 원하는 답부터 정리합니다.",href:"blog-marketing.html"},{name:"업종 맞춤 구성",desc:"병원, 법률, 시공, 매장 등 업종에 맞는 흐름으로 작성합니다.",href:"industries.html"},{name:"자연스러운 최적화",desc:"억지 반복 없이 주제와 핵심 표현이 자연스럽게 읽히도록 만듭니다.",href:"seo-marketing.html"}])}</div></section><section class="writing-process"><div class="wrap growth-layout"><div><span class="kicker">WRITING PROCESS</span><h2>자료 확인부터<br>최종 검수까지 직접</h2></div><ol><li><b>01</b><span>업종·서비스·키워드 확인</span></li><li><b>02</b><span>검색 결과와 경쟁 글 분석</span></li><li><b>03</b><span>도입·본문·문의 흐름 작성</span></li><li><b>04</b><span>표현과 검색 구조 최종 검수</span></li></ol></div></section>` + F();
+}
 function simple(type) {
   if (type === "portfolio") {
     let a = G;
@@ -239,6 +250,7 @@ let pages = new Map([
   ["industries.html", hub("industries")],
   ["portfolio.html", simple("portfolio")],
   ["about.html", simple("about")],
+  ["blog-writing.html", writingPage()],
 ]);
 S.forEach((s) => pages.set(s.slug + ".html", service(s)));
 R.forEach((r) => {
@@ -251,7 +263,7 @@ I.forEach((i) => pages.set(i.slug + "-marketing.html", detail(null, i)));
 pages.forEach((v, k) =>
   writeFileSync(
     k,
-    v.replaceAll("업체", "브랜드").replace("</head>", '<link rel="stylesheet" href="premium.css"></head>'),
+    v.replaceAll("업체", "브랜드").replace("</head>", '<link rel="stylesheet" href="premium.css"></head>').replace("</body>", '<script src="motion-enhance.js" defer></script></body>'),
   ),
 );
 let day = new Date().toISOString().slice(0, 10);
