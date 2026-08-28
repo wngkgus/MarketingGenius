@@ -62,10 +62,6 @@ const G = [
       "blog-search-1.png",
       "blog-search-2.png",
       "blog-search-3.png",
-      "thumb-blog-1.jpg",
-      "thumb-blog-2.jpg",
-      "thumb-blog-3.jpg",
-      "thumb-blog-4.jpg",
     ],
   },
   {
@@ -76,7 +72,6 @@ const G = [
       "instagram-1.jpg",
       "threads-1.jpg",
       "thread-insight-1.jpg",
-      "thumb-instagram-1.jpg",
     ],
   },
   {
@@ -88,10 +83,6 @@ const G = [
       "cafe-2.png",
       "cafe-3.png",
       "cafe-4.png",
-      "thumb-cafe-1.jpg",
-      "thumb-cafe-2.jpg",
-      "thumb-cafe-3.jpg",
-      "thumb-cafe-4.jpg",
     ],
   },
   {
@@ -105,10 +96,6 @@ const G = [
       "code-4.png",
       "powerlink-1.png",
       "powerlink-2.png",
-      "thumb-code-1.jpg",
-      "thumb-code-2.jpg",
-      "thumb-code-3.jpg",
-      "thumb-code-4.jpg",
     ],
   },
   {
@@ -121,10 +108,6 @@ const G = [
       "homepage-3.png",
       "homepage-4.png",
       "homepage-5.png",
-      "thumb-homepage-1.jpg",
-      "thumb-homepage-2.jpg",
-      "thumb-homepage-3.jpg",
-      "thumb-homepage-4.jpg",
     ],
   },
 ];
