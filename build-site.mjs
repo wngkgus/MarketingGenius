@@ -121,7 +121,6 @@ function H(t, d, p = "", active = "") {
     ["서비스", "services.html"],
     ["지역별 마케팅", "regions.html"],
     ["업종별 마케팅", "industries.html"],
-    ["블로그 원고 작성", "blog-writing.html"],
     ["포트폴리오", "portfolio.html"],
     ["소개", "about.html"],
   ];
@@ -133,6 +132,10 @@ function F() {
 const icons=['<svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4V5Z"/><path d="M8 9h8M8 12h5"/></svg>','<svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>','<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M17.5 6.5h.01"/></svg>','<svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="15" rx="2"/><path d="M3 9h18M7 6.5h.01"/></svg>','<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5M8 11l2 2 4-4"/></svg>'];
 const cards = (a) =>
   `<div class="grid">${a.map((x, i) => `<article class="card reveal">${x.ai ? `<div class="service-photo"><img src="${x.ai}" alt="${x.name} 서비스 이미지"></div>` : ""}<span class="card-icon">${icons[i % icons.length]}</span><span class="num">${String(i + 1).padStart(2, "0")}</span><h3>${x.name}</h3><p>${x.desc}</p><a class="more" href="${x.href}">자세히 보기 →</a></article>`).join("")}</div>`;
+const serviceCards = () => [
+  ...S.map((x) => ({ ...x, href: x.slug + ".html" })),
+  {name:"블로그 원고 작성",desc:"상위노출 목적과 검색 로직에 맞는 업종별 원고를 직접 작성합니다.",href:"blog-writing.html",ai:"assets/ai-service-blog.png"},
+];
 function home() {
   let d =
     "블로그, 카페, SNS, 홈페이지 제작과 검색 최적화를 상담부터 실행까지 직접 진행하는 8년 경력 1인 프리랜서입니다.";
@@ -239,7 +242,7 @@ function simple(type) {
       type + ".html",
       type + ".html",
     ) +
-    `<section class="hero"><div class="wrap"><h1>${about ? "말만 하는 사람이 아닌,<br><em>직접 만드는 마케터</em>" : "필요한 채널만 골라<br><em>하나의 흐름으로</em>"}</h1><p class="lead">상담부터 실행과 개선까지 한 담당자가 직접 책임집니다.</p></div></section><section class="soft"><div class="wrap">${cards(S.map((x) => ({ ...x, href: x.slug + ".html" })))}</div></section>` +
+    `<section class="hero"><div class="wrap"><h1>${about ? "말만 하는 사람이 아닌,<br><em>직접 만드는 마케터</em>" : "필요한 채널만 골라<br><em>하나의 흐름으로</em>"}</h1><p class="lead">상담부터 실행과 개선까지 한 담당자가 직접 책임집니다.</p></div></section><section class="soft"><div class="wrap">${cards(about ? S.map((x) => ({ ...x, href: x.slug + ".html" })) : serviceCards())}</div></section>` +
     F()
   );
 }
