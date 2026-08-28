@@ -31,18 +31,18 @@ const S = [
   desc,
 }));
 const RN =
-    "서울 부산 대구 인천 광주 대전 울산 세종 수원 용인 고양 성남 화성 청주 천안 전주 평택 안산 안양 김포 파주 남양주 의정부 하남 원주 춘천 강릉 창원 김해 양산 진주 포항 구미 경주 군산 익산 목포 여수 순천 제주 안성 충주 금산".split(
+    "대전 세종 전주 대구 안성 평택 부산 광주 군산 이천 증평".split(
       " ",
     ),
   RS =
-    "seoul busan daegu incheon gwangju daejeon ulsan sejong suwon yongin goyang seongnam hwaseong cheongju cheonan jeonju pyeongtaek ansan anyang gimpo paju namyangju uijeongbu hanam wonju chuncheon gangneung changwon gimhae yangsan jinju pohang gumi gyeongju gunsan iksan mokpo yeosu suncheon jeju anseong chungju geumsan".split(
+    "daejeon sejong jeonju daegu anseong pyeongtaek busan gwangju gunsan icheon jeungpyeong".split(
       " ",
     ),
   R = RN.map((name, i) => ({ name, slug: RS[i] }));
 const I = [
   ["hospital", "병원"],
   ["lawyer", "변호사"],
-  ["construction", "시공업체"],
+  ["construction", "시공"],
   ["interior", "인테리어"],
   ["academy", "학원"],
   ["restaurant", "음식점"],
@@ -144,16 +144,17 @@ function H(t, d, p = "", active = "") {
   return `<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${E(t)}</title><meta name="description" content="${E(d)}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="${B}/${p}"><meta property="og:title" content="${E(t)}"><meta property="og:description" content="${E(d)}"><meta property="og:image" content="${B}/assets/service-homepage.png"><link rel="stylesheet" href="site.css"><link rel="icon" href="favicon.svg"><script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@type": "ProfessionalService", name: "마케팅천재", url: `${B}/${p}`, telephone: "+82-10-2719-5334", areaServed: "대한민국" })}</script></head><body><div class="cursor-glow"></div><a class="skip" href="#main">본문 바로가기</a><header class="site-head"><div class="wrap head-row"><a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 24 24"><path d="M2 18V6l4 6 4-6v12M22 8.5C20.8 6.8 19.3 6 17.5 6a6 6 0 1 0 4.5 10v-4h-4.5"/></svg></span><span>마케팅<i>천재</i></span></a><button class="menu" aria-label="메뉴 열기">☰</button><nav class="nav">${nav.map(([n, u]) => `<a href="${u}"${active === u ? ' aria-current="page"' : ""}>${n}</a>`).join("")}</nav><a class="head-call" href="tel:${P}">상담 ${P}</a></div></header><main id="main">`;
 }
 function F() {
-  return `<section class="cta"><div class="wrap"><div class="cta-box"><span class="kicker">FREE CONSULTING</span><h2>우리 업체에 맞는 마케팅,<br>편하게 이야기해 보세요.</h2><p>8년 경력 담당자가 상담부터 운영까지 직접 진행합니다.</p><div class="cta-actions"><a class="btn primary" href="tel:${P}">전화 상담 ${P}</a><button class="btn copy" data-copy="${K}">카카오톡 ID 복사 ${K}</button></div></div></div></section></main><footer class="site-foot"><div class="wrap foot-grid"><div><a class="brand" href="index.html">마케팅<i>천재</i></a><p>검색에서 발견되고 상담으로 이어지는 흐름을 만듭니다.</p></div><div><h3>서비스</h3>${S.map((s) => `<a href="${s.slug}.html">${s.name}</a>`).join("")}</div><div><h3>상담</h3><a href="tel:${P}">${P}</a><p>카카오톡 ${K}</p></div></div></footer><script src="site.js" defer></script></body></html>`;
+  return `<section class="cta"><div class="wrap"><div class="cta-box"><span class="kicker">FREE CONSULTING</span><h2>내 브랜드에 맞는 마케팅,<br>편하게 이야기해 보세요.</h2><p>8년 경력의 1인 프리랜서가 상담부터 운영까지 직접 진행합니다.</p><div class="cta-actions"><a class="btn primary" href="tel:${P}">전화 상담 ${P}</a><button class="btn copy" data-copy="${K}">카카오톡 ID 복사 ${K}</button></div></div></div></section></main><footer class="site-foot"><div class="wrap foot-grid"><div><a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 24 24"><path d="M2 18V6l4 6 4-6v12M22 8.5C20.8 6.8 19.3 6 17.5 6a6 6 0 1 0 4.5 10v-4h-4.5"/></svg></span><span>마케팅<i>천재</i></span></a><p>검색에서 발견되고 상담으로 이어지는 흐름을 만듭니다.</p></div><div><h3>서비스</h3>${S.map((s) => `<a href="${s.slug}.html">${s.name}</a>`).join("")}</div><div><h3>상담</h3><a href="tel:${P}">${P}</a><p>카카오톡 ${K}</p></div></div></footer><script src="site.js" defer></script></body></html>`;
 }
+const icons=['<svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4V5Z"/><path d="M8 9h8M8 12h5"/></svg>','<svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>','<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M17.5 6.5h.01"/></svg>','<svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="15" rx="2"/><path d="M3 9h18M7 6.5h.01"/></svg>','<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5M8 11l2 2 4-4"/></svg>'];
 const cards = (a) =>
-  `<div class="grid">${a.map((x, i) => `<article class="card reveal"><span class="num">${String(i + 1).padStart(2, "0")}</span><h3>${x.name}</h3><p>${x.desc}</p><a class="more" href="${x.href}">자세히 보기 →</a></article>`).join("")}</div>`;
+  `<div class="grid">${a.map((x, i) => `<article class="card reveal"><span class="card-icon">${icons[i%icons.length]}</span><span class="num">${String(i + 1).padStart(2, "0")}</span><h3>${x.name}</h3><p>${x.desc}</p><a class="more" href="${x.href}">자세히 보기 →</a></article>`).join("")}</div>`;
 function home() {
   let d =
-    "블로그, 카페, SNS, 홈페이지 제작과 검색 최적화를 상담부터 실행까지 직접 진행하는 온라인 마케팅 전문 실행사입니다.";
+    "블로그, 카페, SNS, 홈페이지 제작과 검색 최적화를 상담부터 실행까지 직접 진행하는 8년 경력 1인 프리랜서입니다.";
   return (
-    H("온라인 마케팅 전문 실행사 마케팅천재 | 전국 상담", d) +
-    `<section class="hero"><div class="wrap hero-grid"><div><span class="kicker">8 YEARS · ONE PERSON STUDIO</span><h1>검색에서 발견되고,<br><em>상담으로 이어지는</em><br>마케팅을 만듭니다.</h1><p class="lead">고객이 무엇을 찾고 어떤 정보를 확인한 뒤 연락하는지 한 흐름으로 설계합니다.</p><a class="btn primary" href="tel:${P}">무료 진단 받기</a></div><div class="hero-card"><img src="assets/homepage-1.png" alt="홈페이지 제작 사례"><div class="stamp">상담부터<br>실행까지<br>직접</div></div></div></section><section><div class="wrap"><div class="section-head"><div><span class="kicker">WHAT WE DO</span><h2>필요한 채널을<br>하나의 흐름으로</h2></div></div>${cards(S.map((x) => ({ ...x, href: x.slug + ".html" })))}</div></section><section class="soft"><div class="wrap"><div class="proof"><div><strong>8년</strong><span>실무 경력</span></div><div><strong>1:1</strong><span>직접 진행</span></div><div><strong>5가지</strong><span>통합 서비스</span></div><div><strong>전국</strong><span>비대면 상담</span></div></div></div></section>` +
+    H("온라인 마케팅 1인 프리랜서 마케팅천재 | 전국 상담", d) +
+    `<section class="hero"><div class="wrap hero-grid"><div><span class="kicker">8 YEARS · ONE PERSON STUDIO</span><h1>검색에서 발견되고,<br><em>상담으로 이어지는</em><br>마케팅을 만듭니다.</h1><p class="lead">고객이 무엇을 찾고 어떤 정보를 확인한 뒤 연락하는지 한 흐름으로 설계합니다.</p><a class="btn primary" href="tel:${P}">무료 진단 받기</a></div><div class="hero-card"><img src="assets/homepage-1.png" alt="홈페이지 제작 사례"><div class="stamp">1인<br>프리랜서<br>직접</div></div></div></section><section><div class="wrap"><div class="section-head"><div><span class="kicker">WE ARE WORK</span><h2>필요한 채널을<br>하나의 흐름으로</h2></div><p>상담한 사람이 기획하고 직접 만드는 1인 프리랜서 서비스입니다.</p></div>${cards(S.map((x) => ({ ...x, href: x.slug + ".html" })))}</div></section><section class="showcase soft"><div class="wrap"><div class="section-head"><div><span class="kicker">OUR CREATIONS</span><h2>작업 결과가<br>실력을 보여줍니다.</h2></div><a class="btn" href="portfolio.html">포트폴리오 전체 보기</a></div><div class="square-work-grid">${G.map((g,i)=>`<a class="square-work reveal" href="portfolio.html#work-${g.key}"><img src="assets/${g.files[0]}" alt="${g.name} 포트폴리오"><span><b>0${i+1}</b><strong>${g.name}</strong><small>${g.desc}</small></span></a>`).join("")}</div></div></section><section><div class="wrap"><div class="proof"><div><strong>8년</strong><span>실무 경력</span></div><div><strong>1:1</strong><span>직접 진행</span></div><div><strong>5가지</strong><span>통합 서비스</span></div><div><strong>11곳</strong><span>지역별 안내</span></div></div></div></section>` +
     F()
   );
 }
@@ -265,7 +266,12 @@ R.forEach((r) => {
   );
 });
 I.forEach((i) => pages.set(i.slug + "-marketing.html", detail(null, i)));
-pages.forEach((v, k) => writeFileSync(k, v));
+pages.forEach((v, k) =>
+  writeFileSync(
+    k,
+    v.replaceAll("업체", "브랜드").replace("</head>", '<link rel="stylesheet" href="premium.css"></head>'),
+  ),
+);
 let day = new Date().toISOString().slice(0, 10);
 writeFileSync(
   "sitemap.xml",
