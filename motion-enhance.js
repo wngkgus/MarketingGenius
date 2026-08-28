@@ -6,3 +6,7 @@ const counterObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
   requestAnimationFrame(tick);counterObserver.unobserve(el);
 }),{threshold:.45});
 counters.forEach(el=>counterObserver.observe(el));
+const storyItems=document.querySelectorAll('.article-main h2,.article-main h3,.article-main p,.aside');
+const storyObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('on');storyObserver.unobserve(entry.target)}}),{threshold:.12});
+storyItems.forEach(el=>storyObserver.observe(el));
+document.querySelectorAll('.kakao-float').forEach(el=>el.addEventListener('click',e=>e.preventDefault()));
