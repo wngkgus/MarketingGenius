@@ -181,7 +181,7 @@ function service(s) {
   let imgs = group.files;
   return (
     H(
-      `${s.name} 마케팅 전문 실행사 | 마케팅천재`,
+      `${s.name} 마케팅 1인 프리랜서 | 마케팅천재`,
       s.desc,
       s.slug + ".html",
       "services.html",
@@ -205,7 +205,7 @@ function detail(r, i = null) {
     d = `${pre} 고객의 검색 흐름과 선택 기준에 맞춰 블로그, SNS, 홈페이지와 검색 최적화를 직접 운영합니다.`;
   return (
     H(
-      `${pre} 마케팅 전문 실행사 | 마케팅천재`,
+      `${pre} 마케팅 1인 프리랜서 | 마케팅천재`,
       d,
       path,
       i ? "industries.html" : "regions.html",
