@@ -29,6 +29,7 @@ const S = [
         : slug + "-marketing",
   name,
   desc,
+  ai: `assets/ai-service-${slug}.png`,
 }));
 const RN =
     "대전 세종 전주 대구 안성 평택 부산 광주 군산 이천 증평".split(
@@ -70,7 +71,6 @@ const G = [
     desc: "피드 · 릴스 · 스레드 · 계정 운영",
     files: [
       "instagram-1.jpg",
-      "threads-1.jpg",
       "thread-insight-1.jpg",
     ],
   },
@@ -131,13 +131,13 @@ function F() {
 }
 const icons=['<svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4V5Z"/><path d="M8 9h8M8 12h5"/></svg>','<svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>','<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M17.5 6.5h.01"/></svg>','<svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="15" rx="2"/><path d="M3 9h18M7 6.5h.01"/></svg>','<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5M8 11l2 2 4-4"/></svg>'];
 const cards = (a) =>
-  `<div class="grid">${a.map((x, i) => `<article class="card reveal"><span class="card-icon">${icons[i%icons.length]}</span><span class="num">${String(i + 1).padStart(2, "0")}</span><h3>${x.name}</h3><p>${x.desc}</p><a class="more" href="${x.href}">자세히 보기 →</a></article>`).join("")}</div>`;
+  `<div class="grid">${a.map((x, i) => `<article class="card reveal">${x.ai ? `<div class="service-photo"><img src="${x.ai}" alt="${x.name} 서비스 이미지"></div>` : ""}<span class="card-icon">${icons[i % icons.length]}</span><span class="num">${String(i + 1).padStart(2, "0")}</span><h3>${x.name}</h3><p>${x.desc}</p><a class="more" href="${x.href}">자세히 보기 →</a></article>`).join("")}</div>`;
 function home() {
   let d =
     "블로그, 카페, SNS, 홈페이지 제작과 검색 최적화를 상담부터 실행까지 직접 진행하는 8년 경력 1인 프리랜서입니다.";
   return (
     H("온라인 마케팅 1인 프리랜서 마케팅천재 | 전국 상담", d) +
-    `<section class="hero home-visual"><div class="visual-bg"><img src="assets/homepage-1.png" alt=""></div><div class="wrap visual-copy"><span>MARKETING GENIUS</span><h1>검색에서 상담까지,<br>직접 만드는 마케팅</h1><p>8년 경력 1인 프리랜서의 온라인 마케팅</p></div></section><section class="work-section"><div class="wrap"><div class="center-head"><h2>We Are Work</h2><p>상담한 사람이 기획하고, 만들고, 운영합니다.</p></div>${cards(S.map((x) => ({ ...x, href: x.slug + ".html" })))}</div></section><section class="creation-section"><div class="wrap"><div class="center-head"><h2>Our Creations</h2><p>말보다 결과물로 보여드리는 실제 작업입니다.</p></div><div class="creation-tabs">${G.map(g=>`<a href="portfolio.html#work-${g.key}">${g.name}</a>`).join("")}</div><div class="creation-grid">${G.flatMap(g=>g.files.slice(0,2).map((file,i)=>`<a class="creation-item reveal" href="portfolio.html#work-${g.key}"><img src="assets/${file}" alt="${g.name} 작업 사례"><div><b>${g.name}</b><span>${g.desc}</span></div></a>`)).slice(0,8).join("")}</div><a class="creation-more" href="portfolio.html">더보기 +</a></div></section><section class="numbers"><div class="wrap"><div class="center-head"><h2>With Me</h2><p>한 명이 처음부터 끝까지 책임지는 안정적인 작업 방식입니다.</p></div><div class="proof"><div><strong>8년</strong><span>실무 경력</span></div><div><strong>1:1</strong><span>직접 소통</span></div><div><strong>5가지</strong><span>전문 서비스</span></div><div><strong>11곳</strong><span>지역별 안내</span></div></div></div></section>` +
+    `<section class="hero home-visual"><div class="visual-bg"><img src="assets/homepage-1.png" alt=""></div><div class="wrap visual-copy"><span>MARKETING GENIUS</span><h1>검색에서 상담까지,<br>직접 만드는 마케팅</h1><p>8년 경력 1인 프리랜서의 온라인 마케팅</p></div></section><section class="work-section"><div class="wrap"><div class="center-head"><h2>직접 진행하는 서비스</h2><p>상담한 사람이 기획하고, 만들고, 운영합니다.</p></div>${cards(S.map((x) => ({ ...x, href: x.slug + ".html" })))}</div></section><section class="creation-section"><div class="wrap"><div class="center-head"><h2>직접 만든 작업</h2><p>말보다 결과물로 보여드리는 실제 작업입니다.</p></div><div class="creation-tabs">${G.map(g=>`<a href="portfolio.html#work-${g.key}">${g.name}</a>`).join("")}</div><div class="creation-grid">${G.flatMap(g=>g.files.slice(0,2).map((file,i)=>`<a class="creation-item reveal" href="portfolio.html#work-${g.key}"><img src="assets/${file}" alt="${g.name} 작업 사례"><div><b>${g.name}</b><span>${g.desc}</span></div></a>`)).slice(0,8).join("")}</div><a class="creation-more" href="portfolio.html">더보기 +</a></div></section>` +
     F()
   );
 }
