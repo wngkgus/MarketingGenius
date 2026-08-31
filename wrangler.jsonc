@@ -1,0 +1,7 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "marketinggenius",
+  "main": "worker.js",
+  "compatibility_date": "2026-08-28",
+  "assets": { "directory": ".", "binding": "ASSETS", "run_worker_first": true }
+}
