@@ -203,15 +203,16 @@ function detail(r, i = null) {
         ? `${r.slug}-${i.slug}-marketing.html`
         : `${i.slug}-marketing.html`
       : `${r.slug}-online-marketing.html`,
-    d = `${pre} 고객의 검색 흐름과 선택 기준에 맞춰 블로그, SNS, 홈페이지와 검색 최적화를 직접 운영합니다.`;
+    keyword = i ? `${pre} 마케팅` : `${r.name} 온라인마케팅`,
+    d = `${keyword} 전문 1인 프리랜서가 지역 고객의 검색 흐름에 맞춰 블로그, SNS, 홈페이지와 검색 최적화를 직접 운영합니다.`;
   return (
     H(
-      `${pre} 마케팅 1인 프리랜서 | 마케팅천재`,
+      `${keyword} 1인 프리랜서 | 마케팅천재`,
       d,
       path,
       i ? "industries.html" : "regions.html",
     ) +
-    `<section class="hero"><div class="wrap"><span class="kicker">ONLINE MARKETING</span><h1><em>${pre} 마케팅</em>,<br>지역명만 넣지 않고<br>선택할 이유를 만듭니다.</h1><p class="lead">${d}</p><a class="btn primary" href="tel:${P}">마케팅 상담</a></div></section><section><div class="wrap article"><article class="article-main"><h2>고객이 먼저 확인하는 정보</h2><p>업체를 고를 때는 광고 문구만 보지 않습니다. 실제 진행 사례와 비용 기준, 문의 뒤 진행 과정을 함께 확인합니다. 어려운 표현과 과장을 줄이고 고객이 판단할 수 있는 내용을 충분히 제공합니다.</p><h2>검색부터 상담까지 연결합니다</h2><p>검색에서 처음 만나는 글과 SNS, 마지막으로 확인하는 홈페이지가 같은 메시지를 전하도록 정리합니다. 빠른 유입이 필요하면 광고를 더하고 꾸준한 콘텐츠로 장기 검색 기반을 함께 쌓습니다.</p>${!i ? `<h2>${r.name} 업종별 마케팅</h2><div class="links">${I.map((x) => `<a class="chip" href="${r.slug}-${x.slug}-marketing.html">${r.name} ${x.name}</a>`).join("")}</div>` : ""}</article><aside class="aside"><strong>연결 서비스</strong>${S.map((s) => `<a href="${U(s.slug + ".html")}">${s.name}</a>`).join("")}</aside></div></section>` +
+    `<section class="hero"><div class="wrap"><span class="kicker">ONLINE MARKETING</span><h1><em>${keyword}</em>,<br>지역명만 넣지 않고<br>선택할 이유를 만듭니다.</h1><p class="lead">${d}</p><a class="btn primary" href="tel:${P}">${keyword} 상담</a></div></section><section><div class="wrap article"><article class="article-main"><h2>${keyword}, 고객이 먼저 확인하는 정보</h2><p>업체를 고를 때는 광고 문구만 보지 않습니다. 실제 진행 사례와 비용 기준, 문의 뒤 진행 과정을 함께 확인합니다. 어려운 표현과 과장을 줄이고 고객이 판단할 수 있는 내용을 충분히 제공합니다.</p><h2>${r ? r.name + " " : ""}검색부터 상담까지 연결합니다</h2><p>${r ? r.name + " 지역의 " : ""}검색에서 처음 만나는 글과 SNS, 마지막으로 확인하는 홈페이지가 같은 메시지를 전하도록 정리합니다. 빠른 유입이 필요하면 광고를 더하고 꾸준한 콘텐츠로 장기 검색 기반을 함께 쌓습니다.</p>${!i ? `<h2>${r.name} 온라인마케팅 업종별 안내</h2><div class="links">${I.map((x) => `<a class="chip" href="${r.slug}-${x.slug}-marketing.html">${r.name} ${x.name} 마케팅</a>`).join("")}</div>` : ""}</article><aside class="aside"><strong>연결 서비스</strong>${S.map((s) => `<a href="${U(s.slug + ".html")}">${s.name}</a>`).join("")}</aside></div></section>` +
     F()
   );
 }
