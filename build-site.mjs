@@ -343,8 +343,8 @@ let pages = new Map([
 ]);
 S.forEach((s) => pages.set(s.slug + ".html", service(s)));
 R.forEach((r) => {
-  pages.set(r.slug + "-online-marketing.html", detail(r));
-  I.forEach((i) =>
+  if (r.slug === "daejeon") pages.set(r.slug + "-online-marketing.html", detail(r));
+  I.filter((i) => i.slug === "hospital" || r.slug === "daejeon").forEach((i) =>
     pages.set(`${r.slug}-${i.slug}-marketing.html`, detail(r, i)),
   );
 });
@@ -358,7 +358,7 @@ pages.forEach((v, k) =>
 let day = new Date().toISOString().slice(0, 10);
 writeFileSync(
   "sitemap.xml",
-  `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${[...pages.keys()].map((p) => `<url><loc>${B}/${p === "index.html" ? "" : p}</loc><lastmod>${day}</lastmod></url>`).join("")}</urlset>`,
+  `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${[...pages.keys()].map((p) => `<url><loc>${B}${U(p)}</loc><lastmod>${day}</lastmod></url>`).join("")}</urlset>`,
 );
 writeFileSync(
   "robots.txt",
@@ -366,7 +366,13 @@ writeFileSync(
 );
 writeFileSync(
   "_redirects",
-  "/blog.html /blog-marketing.html 301\n/cafe.html /cafe-marketing.html 301\n/instagram.html /sns-marketing.html 301\n/homepage.html /website-production.html 301\n/code-seo.html /seo-marketing.html 301\n",
+  "/blog.html /blog-marketing.html 301\n/cafe.html /cafe-marketing.html 301\n/instagram.html /sns-marketing.html 301\n/homepage.html /website-production.html 301\n/code-seo.html /seo-marketing.html 301\n" +
+    R.filter((r) => r.slug !== "daejeon").flatMap((r) => [
+      `/${r.slug}-online-marketing /regions 301`,
+      ...I.filter((i) => i.slug !== "hospital").map((i) =>
+        `/${r.slug}-${i.slug}-marketing /${i.slug}-marketing 301`,
+      ),
+    ]).join("\n") + "\n",
 );
 console.log(
   pages.size + " pages; " + readdirSync("assets").length + " assets preserved",
