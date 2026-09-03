@@ -212,7 +212,7 @@ function home() {
 function hub(type) {
   let reg = type === "regions",
     a = reg
-      ? R.map((x) => ({
+      ? R.filter((x) => x.slug === "daejeon").map((x) => ({
           name: x.name + "온라인마케팅",
           desc: x.name + " 고객의 검색 흐름과 업종 특성을 반영합니다.",
           href: x.slug + "-online-marketing.html",
