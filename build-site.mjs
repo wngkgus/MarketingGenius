@@ -139,7 +139,7 @@ const serviceCards = () => [
 ];
 function home() {
   let d =
-    "블로그, 카페, SNS, 홈페이지 제작과 검색 최적화를 상담부터 실행까지 직접 진행하는 8년 경력 1인 프리랜서입니다.";
+    "마케팅천재는 블로그·카페·SNS·홈페이지 제작과 검색 최적화를 직접 진행하는 8년 경력 1인 마케팅 전문가입니다.";
   return (
     H("온라인 마케팅 1인 프리랜서 마케팅천재 | 전국 상담", d) +
     `<section class="hero home-visual"><div class="video-pair"><video autoplay muted loop playsinline preload="auto" src="assets/hero-video-1.mp4"></video></div><div class="video-shade"></div><div class="wrap visual-copy"><span>MARKETING GENIUS</span><p class="hero-hook">거품없는 마케팅, 지금 바로 시작해보세요.</p><h1>검색에서 상담까지,<br>직접 만드는 마케팅</h1><p>불필요한 중간 비용 없이 직접 실행하는 8년 경력 1인 프리랜서</p></div></section>` +
