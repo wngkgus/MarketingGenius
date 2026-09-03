@@ -156,7 +156,7 @@ function hub(type) {
   let reg = type === "regions",
     a = reg
       ? R.map((x) => ({
-          name: x.name + " 온라인 마케팅",
+          name: x.name + "온라인마케팅",
           desc: x.name + " 고객의 검색 흐름과 업종 특성을 반영합니다.",
           href: x.slug + "-online-marketing.html",
         }))
@@ -203,7 +203,7 @@ function detail(r, i = null) {
         ? `${r.slug}-${i.slug}-marketing.html`
         : `${i.slug}-marketing.html`
       : `${r.slug}-online-marketing.html`,
-    keyword = i ? `${pre} 마케팅` : `${r.name} 온라인마케팅`,
+    keyword = i ? `${pre} 마케팅` : `${r.name}온라인마케팅`,
     d = `${keyword} 전문 1인 프리랜서가 지역 고객의 검색 흐름에 맞춰 블로그, SNS, 홈페이지와 검색 최적화를 직접 운영합니다.`;
   return (
     H(
