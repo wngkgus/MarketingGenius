@@ -52,6 +52,63 @@ const I = [
   ["ecommerce", "온라인 쇼핑몰"],
   ["franchise", "프랜차이즈"],
 ].map(([slug, name]) => ({ slug, name }));
+const HOSPITAL = {
+  daejeon: {
+    area: "둔산·유성·대덕 등 생활권마다 의료기관 경쟁과 환자 이동 경로가 다른 대전",
+    audience: "직장인과 가족 단위 환자가 진료과, 야간·주말 진료, 주차와 대중교통 접근성을 빠르게 비교합니다.",
+    plan: "진료과별 검색 의도를 나누고 의료진·장비·진료 절차·내원 동선을 한눈에 확인하도록 구성해 둔산권과 유성권의 경쟁 검색에서 차이를 만듭니다.",
+  },
+  sejong: {
+    area: "새롬·도담·나성 등 신도시 생활권을 중심으로 젊은 가족의 의료 수요가 큰 세종",
+    audience: "보호자는 가까운 거리뿐 아니라 소아 진료, 예약 방식, 주차, 진료 시간과 가족이 안심할 정보를 함께 살핍니다.",
+    plan: "생활권별 검색어와 가족 중심의 질문을 콘텐츠로 만들고 예약 전 필요한 준비 사항과 내원 과정을 명확하게 안내합니다.",
+  },
+  jeonju: {
+    area: "완산구와 덕진구를 중심으로 지역 소개와 재방문 신뢰가 중요한 전주",
+    audience: "환자는 의료진의 설명 방식, 실제 진료 범위, 위치와 주차처럼 꾸준히 다닐 수 있는 조건을 확인합니다.",
+    plan: "과장된 표현보다 진료 철학과 상담 과정, 지역 환자가 자주 묻는 질문을 축적해 검색 노출과 신뢰 형성을 함께 설계합니다.",
+  },
+  daegu: {
+    area: "수성구·중구·달서구 등 의료 상권별 경쟁 강도가 높은 대구",
+    audience: "환자는 같은 진료과 안에서도 세부 진료 분야와 의료진 경험, 검사·치료 과정, 접근성을 꼼꼼히 비교합니다.",
+    plan: "진료 분야별 페이지와 전문 정보 콘텐츠를 세분화하고 병원의 강점이 검색 제목부터 상담 화면까지 일관되게 전달되도록 만듭니다.",
+  },
+  anseong: {
+    area: "공도 신도시와 안성 시내, 읍·면 지역의 이동 범위가 함께 고려되어야 하는 안성",
+    audience: "환자는 가까운 병원을 찾으면서도 주차 가능 여부, 진료 시간, 처음 방문할 때 필요한 정보를 중요하게 봅니다.",
+    plan: "공도·시내·인근 읍면의 검색 흐름을 구분하고 지도 정보와 진료 안내, 전화 문의 동선을 간단하게 연결합니다.",
+  },
+  pyeongtaek: {
+    area: "고덕·지제의 신도시와 산업단지, 기존 생활권이 빠르게 확장되는 평택",
+    audience: "직장인과 자녀를 둔 가정은 퇴근 후 진료, 예약 편의, 주차와 세부 진료 가능 여부를 먼저 확인합니다.",
+    plan: "생활권과 환자 유형별 콘텐츠를 나누고 모바일에서 진료 시간 확인부터 전화·예약까지 짧은 경로로 연결합니다.",
+  },
+  busan: {
+    area: "해운대·서면·동래 등 구별 의료 상권과 대중교통 동선이 뚜렷한 부산",
+    audience: "환자는 이동 시간과 역세권 여부, 세부 진료 분야, 예약 대기와 사후 관리 정보를 함께 비교합니다.",
+    plan: "광역 검색과 구·동 단위 검색을 구분하고 지하철·주차 안내와 병원의 진료 강점을 결합해 실제 내원으로 이어지는 페이지를 만듭니다.",
+  },
+  gwangju: {
+    area: "상무·첨단·수완 등 생활권별 의료 수요와 경쟁 환경이 다른 광주",
+    audience: "환자는 가까운 위치와 함께 의료진 소개, 진료 과정, 예약 가능 시간과 후기에서 확인할 수 있는 신뢰 정보를 찾습니다.",
+    plan: "생활권별 핵심 진료 검색어를 정리하고 의료진과 진료 절차를 이해하기 쉬운 콘텐츠로 축적해 지역 검색의 접점을 넓힙니다.",
+  },
+  gunsan: {
+    area: "도심과 산업단지, 읍·면 배후 지역의 환자가 함께 이동하는 군산",
+    audience: "환자는 전화로 확인하기 쉬운 진료 시간, 주차, 위치, 검사 가능 항목과 재방문 편의성을 중요하게 생각합니다.",
+    plan: "복잡한 광고 화면보다 큰 글씨의 핵심 안내와 전화 연결을 우선하고 지역에서 반복되는 건강 질문을 꾸준한 검색 콘텐츠로 만듭니다.",
+  },
+  icheon: {
+    area: "이천 시내와 부발·마장·대월 등 넓은 생활권을 아우르는 이천",
+    audience: "환자는 이동 거리 때문에 진료 가능 항목, 예약 시간, 주차와 당일 검사 여부를 방문 전에 자세히 확인합니다.",
+    plan: "읍·면별 접근 정보와 세부 진료 안내를 연결하고 한 번의 방문을 계획하는 데 필요한 내용을 페이지 안에서 충분히 제공합니다.",
+  },
+  jeungpyeong: {
+    area: "증평 도심과 인접 지역의 생활권이 밀접하게 이어지는 증평",
+    audience: "환자는 가까운 병원의 진료 범위와 운영 시간, 의료진의 설명, 전화 상담 편의성을 중심으로 선택합니다.",
+    plan: "지역명만 반복하지 않고 실제 진료 질문과 내원 안내를 구체화하며 정확한 지도·전화·운영 정보를 모든 채널에서 일치시킵니다.",
+  },
+};
 const G = [
   {
     key: "blog",
@@ -126,7 +183,7 @@ function H(t, d, p = "", active = "") {
     ["포트폴리오", "portfolio.html"],
     ["소개", "about.html"],
   ];
-  return `<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${E(t)}</title><meta name="description" content="${E(d)}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="${B}${U(p)}"><meta property="og:title" content="${E(t)}"><meta property="og:description" content="${E(d)}"><meta property="og:image" content="${B}/assets/service-homepage.png"><link rel="stylesheet" href="site.css"><link rel="icon" href="favicon.svg"><script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@type": "ProfessionalService", name: "마케팅천재", url: `${B}${U(p)}`, telephone: "+82-10-2719-5334", areaServed: "대한민국" })}</script></head><body><div class="cursor-glow"></div><a class="skip" href="#main">본문 바로가기</a><header class="site-head"><div class="wrap head-row"><a class="brand" href="${U("index.html")}"><span class="brand-mark"><svg viewBox="0 0 24 24"><path d="M2 18V6l4 6 4-6v12M22 8.5C20.8 6.8 19.3 6 17.5 6a6 6 0 1 0 4.5 10v-4h-4.5"/></svg></span><span>마케팅<i>천재</i></span></a><button class="menu" aria-label="메뉴 열기">☰</button><nav class="nav">${nav.map(([n, u]) => `<a href="${u}"${active === u ? ' aria-current="page"' : ""}>${n}</a>`).join("")}</nav><a class="head-call" href="tel:${P}">상담 ${P}</a></div></header><main id="main">`;
+  return `<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${E(t)}</title><meta name="description" content="${E(d)}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="${B}${U(p)}"><meta property="og:title" content="${E(t)}"><meta property="og:description" content="${E(d)}"><meta property="og:image" content="${B}/assets/service-homepage.png"><link rel="stylesheet" href="site.css"><link rel="icon" href="favicon.svg"><script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@type": "ProfessionalService", name: "마케팅천재", url: `${B}${U(p)}`, telephone: "+82-10-2719-5334", areaServed: "대한민국" })}</script></head><body><div class="cursor-glow"></div><a class="skip" href="#main">본문 바로가기</a><header class="site-head"><div class="wrap head-row"><a class="brand" href="${U("index.html")}"><span class="brand-mark"><svg viewBox="0 0 24 24"><path d="M2 18V6l4 6 4-6v12M22 8.5C20.8 6.8 19.3 6 17.5 6a6 6 0 1 0 4.5 10v-4h-4.5"/></svg></span><span>마케팅<i>천재</i></span></a><button class="menu" aria-label="메뉴 열기">☰</button><nav class="nav">${nav.map(([n, u]) => `<a href="${U(u)}"${active === u ? ' aria-current="page"' : ""}>${n}</a>`).join("")}</nav><a class="head-call" href="tel:${P}">상담 ${P}</a></div></header><main id="main">`;
 }
 function F() {
   return `<section class="cta"><div class="wrap"><div class="cta-box"><span class="kicker">FREE CONSULTING</span><h2>내 브랜드에 맞는 마케팅,<br>편하게 이야기해 보세요.</h2><p>8년 경력의 1인 프리랜서가 상담부터 운영까지 직접 진행합니다.</p><div class="cta-actions"><a class="btn primary" href="tel:${P}">전화 상담 ${P}</a></div></div></div></section></main><a class="kakao-float copy" data-copy="${K}" href="#" aria-label="카카오톡 아이디 ${K} 복사"><span><svg viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.5 2 10.8c0 2.8 1.9 5.2 4.7 6.6L5.5 22l5-3c.5.1 1 .1 1.5.1 5.5 0 10-3.5 10-8.3S17.5 3 12 3Z"/></svg></span><b>카카오톡 상담</b><strong>${K}</strong></a><footer class="site-foot"><div class="wrap foot-grid"><div><a class="brand" href="${U("index.html")}"><span class="brand-mark"><svg viewBox="0 0 24 24"><path d="M2 18V6l4 6 4-6v12M22 8.5C20.8 6.8 19.3 6 17.5 6a6 6 0 1 0 4.5 10v-4h-4.5"/></svg></span><span>마케팅<i>천재</i></span></a><p>검색에서 발견되고 상담으로 이어지는 흐름을 만듭니다.</p></div><div><h3>서비스</h3>${S.map((s) => `<a href="${U(s.slug + ".html")}">${s.name}</a>`).join("")}<a href="${U("blog-writing.html")}">블로그 원고 작성</a></div><div><h3>상담</h3><a href="tel:${P}">${P}</a><p>카카오톡 ${K}</p></div></div></footer><script src="site.js" defer></script></body></html>`;
@@ -196,7 +253,32 @@ function service(s) {
     F()
   );
 }
+function hospitalDetail(r = null) {
+  const keyword = r ? `${r.name}병원마케팅` : "병원마케팅";
+  const path = r ? `${r.slug}-hospital-marketing.html` : "hospital-marketing.html";
+  const profile = r ? HOSPITAL[r.slug] : null;
+  const desc = r
+    ? `${keyword} 전문 1인 프리랜서. ${r.name} 환자의 검색과 내원 동선을 분석해 의료광고 기준을 지키는 블로그·홈페이지·검색 콘텐츠를 직접 운영합니다.`
+    : "병원마케팅 전문 1인 프리랜서가 의료광고 기준을 고려해 진료 정보, 블로그, 홈페이지와 지역 검색 콘텐츠를 직접 운영합니다.";
+  const regionLinks = `<section class="soft"><div class="wrap"><div class="center-head"><h2>지역별 병원마케팅 안내</h2><p>병원이 위치한 지역을 선택하면 상권과 환자 검색 흐름에 맞춘 전략을 확인할 수 있습니다.</p></div><div class="links">${R.map((x) => `<a class="chip" href="${U(`${x.slug}-hospital-marketing.html`)}">${x.name}병원마케팅</a>`).join("")}</div></div></section>`;
+  const body = profile
+    ? `<section><div class="wrap article"><article class="article-main"><h2>${r.name}에서 병원을 선택하는 기준부터 봅니다</h2><p>${profile.area}에서는 병원 이름을 알리는 것만으로 선택받기 어렵습니다. ${profile.audience}</p><h2>${keyword}, 진료과와 생활권을 함께 분석합니다</h2><p>${profile.plan}</p><h2>신뢰를 해치지 않는 병원 콘텐츠</h2><p>치료 효과를 단정하거나 불안을 자극하는 표현을 피하고, 의료진·진료 범위·검사 과정·운영 정보를 사실에 근거해 전달합니다. 상담부터 기획과 제작, 수정까지 한 명이 직접 맡아 병원의 말투와 정보를 일관되게 관리합니다.</p></article><aside class="aside"><strong>${r.name} 병원 마케팅 핵심</strong><a href="${U("seo-marketing.html")}">진료과별 검색 의도 분석</a><a href="${U("blog-marketing.html")}">지역·생활권 콘텐츠 구성</a><a href="${U("website-production.html")}">홈페이지 예약 동선 점검</a><a href="${U("about.html")}">의료광고 표현 검수</a></aside></div></section>`
+    : `<section><div class="wrap article"><article class="article-main"><h2>병원은 진료 정보를 먼저 확인합니다</h2><p>환자는 광고 문구보다 어떤 진료를 받을 수 있는지, 의료진은 누구인지, 예약과 검사 과정은 어떻게 되는지 확인합니다. 진료과별 질문을 이해하기 쉬운 콘텐츠로 정리해 검색부터 상담까지 연결합니다.</p><h2>병원마다 다른 선택 이유를 설계합니다</h2><p>입지와 진료 분야, 주 환자층, 운영 시간과 내원 동선을 분석해 병원만의 정보 구조를 만듭니다. 지역명만 바꾼 글을 반복하지 않고 실제 환자가 궁금해하는 내용을 지역별로 다르게 구성합니다.</p><h2>의료광고 기준을 고려해 직접 운영합니다</h2><p>과장된 효과나 오해를 부르는 표현을 줄이고 확인 가능한 정보를 중심으로 블로그, 홈페이지와 검색 콘텐츠를 제작합니다. 상담한 담당자가 기획과 제작까지 직접 진행합니다.</p></article><aside class="aside"><strong>병원 마케팅 구성</strong><a href="${U("seo-marketing.html")}">진료과 검색 분석</a><a href="${U("blog-marketing.html")}">지역 환자 동선 분석</a><a href="${U("website-production.html")}">블로그·홈페이지 제작</a><a href="${U("about.html")}">검색 구조와 상담 연결</a></aside></div></section>`;
+  return (
+    H(
+      `${keyword} 1인 프리랜서 | 마케팅천재`,
+      desc,
+      path,
+      "industries.html",
+    ) +
+    `<section class="hero"><div class="wrap"><span class="kicker">HOSPITAL MARKETING</span><h1><em>${keyword}</em>,<br>${r ? `${r.name} 환자가 찾는 정보로<br>` : "환자가 신뢰할 정보로<br>"}선택할 이유를 만듭니다.</h1><p class="lead">${desc}</p><a class="btn primary" href="tel:${P}">${keyword} 상담</a></div></section>` +
+    body +
+    regionLinks +
+    F()
+  );
+}
 function detail(r, i = null) {
+  if (i?.slug === "hospital") return hospitalDetail(r);
   let pre = i ? `${r ? r.name + " " : ""}${i.name}` : r.name,
     path = i
       ? r
@@ -266,7 +348,7 @@ R.forEach((r) => {
     pages.set(`${r.slug}-${i.slug}-marketing.html`, detail(r, i)),
   );
 });
-I.forEach((i) => pages.set(i.slug + "-marketing.html", detail(null, i)));
+I.forEach((i) => pages.set(i.slug + "-marketing.html", i.slug === "hospital" ? hospitalDetail() : detail(null, i)));
 pages.forEach((v, k) =>
   writeFileSync(
     k,
