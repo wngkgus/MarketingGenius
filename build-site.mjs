@@ -44,8 +44,9 @@ const R = [
   { name: "금산", slug: "geumsan", areas: "금산읍·추부면·진산면·복수면", audience: "지역 상점, 건강식품, 농업 연계 사업, 시공", market: "읍·면 단위의 방문·출장 수요가 중요해 판매 품목과 서비스 가능 지역, 연락 방법을 빠르게 보여줘야 합니다.", plan: "상품·서비스의 신뢰 근거와 지역 범위를 먼저 정리하고 검색 콘텐츠와 온라인 판매 동선을 연결합니다." },
   { name: "용인", slug: "yongin", areas: "수지구·기흥구·처인구·죽전·동백", audience: "교육, 병원, 부동산, 생활 서비스", market: "구별 주거 형태와 생활권 차이가 커서 용인 전체 키워드만으로는 정확한 고객 의도를 잡기 어렵습니다.", plan: "구·동 단위 검색 페이지와 업종 전문 콘텐츠를 함께 만들고 전환이 좋은 생활권부터 범위를 넓힙니다." },
   { name: "천안", slug: "cheonan", areas: "서북구·동남구·불당동·성정동·청수동", audience: "병원, 학원, 음식점, 기업 서비스", market: "신도심과 기존 상권, 산업 수요가 함께 있어 고객군별 검색 의도와 상담 기준을 나눠야 합니다.", plan: "핵심 생활권별 검색 콘텐츠와 서비스 사례를 정리하고 블로그 유입을 홈페이지 문의로 연결합니다." },
+  { name: "청주", slug: "cheongju", areas: "흥덕구·상당구·서원구·청원구·오창", audience: "병원, 학원, 음식점, 기업 서비스", market: "도심 생활권과 오창 산업권의 고객 특성이 달라 구·동 단위 검색 의도와 업종별 경쟁 환경을 함께 살펴야 합니다.", plan: "핵심 생활권과 업종별 검색 콘텐츠를 구성하고 블로그·지도 검색에서 홈페이지 상담으로 이어지는 동선을 정리합니다." },
 ];
-const LOCAL_LANDING_SLUGS = new Set(["daejeon", "sejong", "daegu", "nonsan", "gwangju", "gongju", "gunsan", "jeonju", "geumsan", "yongin", "cheonan"]);
+const LOCAL_LANDING_SLUGS = new Set(["daejeon", "sejong", "daegu", "nonsan", "gwangju", "gongju", "gunsan", "jeonju", "geumsan", "yongin", "cheonan", "cheongju"]);
 const I = [
   ["hospital", "병원"],
   ["lawyer", "변호사"],
