@@ -1,5 +1,5 @@
 import { writeFileSync, readdirSync } from "node:fs";
-const B = "https://marketinggenius.wngkgus.workers.dev",
+const B = "https://marketing-genius.wngkgus.workers.dev",
   P = "010-2719-5334",
   K = "26hoon";
 const U = (p = "") => p === "index.html" ? "/" : "/" + String(p).replace(/\.html(?=($|[#?]))/, "");

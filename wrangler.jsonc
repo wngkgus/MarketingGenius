@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "marketinggenius",
+  "name": "marketing-genius",
   "compatibility_date": "2026-08-28",
   "assets": {
     "directory": "."
