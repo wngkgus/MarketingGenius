@@ -159,7 +159,6 @@ const E = (s) =>
 function H(t, d, p = "", active = "", area = "대한민국") {
   let nav = [
     ["서비스", "services.html"],
-    ["지역별 마케팅", "regions.html"],
     ["업종별 마케팅", "industries.html"],
     ["포트폴리오", "portfolio.html"],
     ["소개", "about.html"],
@@ -191,19 +190,12 @@ function home() {
   );
 }
 function hub(type) {
-  let reg = type === "regions",
-    a = reg
-      ? R.filter((x) => LOCAL_LANDING_SLUGS.has(x.slug)).map((x) => ({
-          name: x.name + "온라인마케팅",
-          desc: x.name + " 고객의 검색 흐름과 업종 특성을 반영합니다.",
-          href: x.slug + "-online-marketing.html",
-        }))
-      : I.map((x) => ({
+  let a = I.map((x) => ({
           name: x.name + " 마케팅",
           desc: x.name + " 고객의 선택 기준에 맞춰 신뢰할 정보를 구성합니다.",
           href: x.slug + "-marketing.html",
         })),
-    t = reg ? "전국 지역별 온라인 마케팅" : "업종별 온라인 마케팅";
+    t = "업종별 온라인 마케팅";
   return (
     H(
       t + " | 마케팅천재",
@@ -211,7 +203,7 @@ function hub(type) {
       type + ".html",
       type + ".html",
     ) +
-    `<section class="hero"><div class="wrap"><span class="kicker">${reg ? "LOCAL" : "INDUSTRY"} MARKETING</span><h1>${t}</h1><p class="lead">지역과 업종 이름만 반복하지 않고 고객이 실제로 궁금한 답을 담습니다.</p></div></section><section class="soft"><div class="wrap">${cards(a)}</div></section>` +
+    `<section class="hero"><div class="wrap"><span class="kicker">INDUSTRY MARKETING</span><h1>${t}</h1><p class="lead">업종 이름만 반복하지 않고 고객이 실제로 궁금한 답을 담습니다.</p></div></section><section class="soft"><div class="wrap">${cards(a)}</div></section>` +
     F()
   );
 }
@@ -264,14 +256,12 @@ function detail(r, i = null) {
     const keyword = `${r.name}온라인마케팅`;
     const title = `${keyword} | 지역 검색 노출 전략`;
     const d = `${keyword} 전략. ${r.areas} 생활권의 검색 흐름에 맞춰 블로그·홈페이지·SNS를 직접 운영합니다.`;
-    const nearby = R.filter((x) => x.slug !== r.slug).slice(0, 7);
     return (
-      H(title, d, path, "regions.html", r.name) +
-      `<nav class="breadcrumbs wrap" aria-label="현재 위치"><a href="/">홈</a> · <a href="regions.html">지역별 마케팅</a> · ${r.name}</nav>` +
-      `<section class="hero local-hero"><div class="wrap"><span class="kicker">${r.name.toUpperCase()} LOCAL MARKETING</span><h1><em>${keyword}</em>,<br>검색에서 발견되고<br>상담으로 이어지게</h1><p class="lead">${d}</p><div class="hero-actions"><a class="btn primary" href="tel:${P}">${r.name} 마케팅 상담</a><a class="btn" href="#local-plan">지역 전략 보기</a></div></div></section>` +
+      H(title, d, path, "", r.name) +
+      `<section class="hero home-visual"><div class="video-pair"><video autoplay muted loop playsinline preload="metadata" src="assets/hero-video-1.mp4" aria-label="마케팅 작업 소개 영상"></video></div><div class="video-shade"></div><div class="wrap visual-copy"><span>MARKETING GENIUS · ${r.name.toUpperCase()}</span><p class="hero-hook">거품없는 ${r.name} 마케팅, 지금 바로 시작해보세요.</p><h1>${keyword},<br>검색에서 상담까지</h1><p>${r.name} 검색 흐름에 맞춰 직접 실행하는 8년 경력 1인 프리랜서</p></div></section>` +
       `<section id="local-plan" class="soft"><div class="wrap article"><article class="article-main"><span class="kicker">LOCAL SEARCH INTENT</span><h2>${r.name} 고객의 검색 범위를 먼저 나눕니다</h2><p>${r.market}</p><h2>${r.name} 주요 생활권</h2><p>${r.areas} 등 실제 고객이 서비스를 찾는 생활권과 방문·출장 범위를 기준으로 키워드를 정리합니다. 주소만 넣은 페이지가 아니라 제공 가능한 서비스, 선택 기준과 문의 방법을 함께 보여줍니다.</p><div class="links">${r.areas.split("·").map((x) => `<span class="chip">${x} 온라인마케팅</span>`).join("")}</div><h2>문의까지 이어지는 실행 순서</h2><p>${r.plan}</p><ol class="local-steps"><li><b>01</b><div><strong>검색 결과 진단</strong><p>${r.name} 온라인마케팅과 세부 업종 키워드의 경쟁 페이지, 콘텐츠 유형과 문의 동선을 확인합니다.</p></div></li><li><b>02</b><div><strong>지역 맞춤 콘텐츠</strong><p>${r.audience}처럼 지역에서 경쟁이 필요한 업종을 중심으로 고객 질문에 답하는 콘텐츠를 제작합니다.</p></div></li><li><b>03</b><div><strong>전환과 개선</strong><p>전화·카카오톡으로 이어지는 흐름을 점검하고 검색 반응에 따라 제목, 본문과 내부 링크를 보완합니다.</p></div></li></ol></article><aside class="aside"><strong>${r.name} 추천 채널</strong><a href="blog-marketing.html">네이버 블로그 콘텐츠</a><a href="seo-marketing.html">검색 최적화</a><a href="website-production.html">지역 랜딩 페이지</a><a href="sns-marketing.html">SNS 운영</a><a href="tel:${P}">전화 상담 ${P}</a></aside></div></section>` +
       `<section><div class="wrap"><div class="section-head"><div><span class="kicker">BUSINESS FIT</span><h2>${r.name}에서 이런 브랜드에 적합합니다</h2></div><p>${r.audience} 등 지역 고객의 비교와 문의가 중요한 업종을 우선합니다.</p></div>${cards([{name:"지역 방문형",desc:"매장 위치, 운영 정보와 방문 이유를 검색에서 분명하게 보여줍니다.",href:"restaurant-marketing.html"},{name:"상담 전환형",desc:"전문성과 사례를 충분히 전달해 전화와 카카오톡 상담으로 연결합니다.",href:"hospital-marketing.html"},{name:"출장·시공형",desc:"서비스 가능 지역과 실제 작업 과정을 구체적으로 안내합니다.",href:"construction-marketing.html"}])}</div></section>` +
-      `<section class="soft"><div class="wrap"><div class="section-head"><div><span class="kicker">FAQ</span><h2>${r.name} 온라인마케팅 질문</h2></div></div><div class="faq"><details><summary>${r.name} 지역명만 많이 넣으면 상위노출되나요?</summary><p>아닙니다. 지역명 반복보다 검색자가 원하는 서비스 정보, 실제 사례, 운영 주체와 문의 방법을 충실하게 제공해야 합니다.</p></details><details><summary>어떤 채널부터 시작해야 하나요?</summary><p>현재 검색 결과와 보유 콘텐츠를 확인한 뒤 홈페이지, 블로그, SNS 가운데 상담에 가장 가까운 채널부터 정합니다.</p></details><details><summary>성과는 언제 확인할 수 있나요?</summary><p>광고는 빠르게 반응을 볼 수 있지만 자연 검색은 수집과 평가에 시간이 필요합니다. 노출, 유입과 실제 문의를 함께 확인하며 개선합니다.</p></details></div><div class="links local-related">${nearby.map((x) => `<a class="chip" href="${x.slug}-online-marketing.html">${x.name} 온라인마케팅</a>`).join("")}</div></div></section>` +
+      `<section class="soft"><div class="wrap"><div class="section-head"><div><span class="kicker">FAQ</span><h2>${r.name} 온라인마케팅 질문</h2></div></div><div class="faq"><details><summary>${r.name} 지역명만 많이 넣으면 상위노출되나요?</summary><p>아닙니다. 지역명 반복보다 검색자가 원하는 서비스 정보, 실제 사례, 운영 주체와 문의 방법을 충실하게 제공해야 합니다.</p></details><details><summary>어떤 채널부터 시작해야 하나요?</summary><p>현재 검색 결과와 보유 콘텐츠를 확인한 뒤 홈페이지, 블로그, SNS 가운데 상담에 가장 가까운 채널부터 정합니다.</p></details><details><summary>성과는 언제 확인할 수 있나요?</summary><p>광고는 빠르게 반응을 볼 수 있지만 자연 검색은 수집과 평가에 시간이 필요합니다. 노출, 유입과 실제 문의를 함께 확인하며 개선합니다.</p></details></div></div></section>` +
       F()
     );
   }
@@ -329,7 +319,6 @@ function simple(type) {
 let pages = new Map([
   ["index.html", home()],
   ["services.html", simple("services")],
-  ["regions.html", hub("regions")],
   ["industries.html", hub("industries")],
   ["portfolio.html", simple("portfolio")],
   ["about.html", simple("about")],
