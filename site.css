@@ -8,3 +8,5 @@ main>section:not(:first-child){content-visibility:auto;contain-intrinsic-size:1p
 
 /* Regional landing pages and below-the-fold rendering */
 .local-hero{min-height:72vh}.local-steps{display:grid;gap:14px;margin:30px 0;padding:0;list-style:none}.local-steps li{display:grid;grid-template-columns:54px 1fr;gap:18px;padding:22px;border:1px solid var(--line);border-radius:18px;background:#fff}.local-steps b{color:var(--orange);font-size:13px}.local-steps strong{font-size:20px}.local-steps p{margin:6px 0 0}.local-related{margin-top:34px}.work-section,.growth-section,.direct-section,.creation-section,.partner-section,.cta,.site-foot{content-visibility:auto;contain-intrinsic-size:1px 900px}@media(max-width:620px){.local-steps li{grid-template-columns:40px 1fr;padding:18px}}
+.service-gallery figure{height:auto;min-height:0;aspect-ratio:auto}
+.service-gallery img{height:auto;max-height:none;object-fit:contain}

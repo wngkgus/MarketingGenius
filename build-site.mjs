@@ -47,7 +47,6 @@ const R = [
   { name: "천안", slug: "cheonan", areas: "서북구·동남구·불당동·성정동·청수동", audience: "병원, 학원, 음식점, 기업 서비스", market: "신도심과 기존 상권, 산업 수요가 함께 있어 고객군별 검색 의도와 상담 기준을 나눠야 합니다.", plan: "핵심 생활권별 검색 콘텐츠와 서비스 사례를 정리하고 블로그 유입을 홈페이지 문의로 연결합니다." },
   { name: "청주", slug: "cheongju", areas: "흥덕구·상당구·서원구·청원구·오창", audience: "병원, 학원, 음식점, 기업 서비스", market: "도심 생활권과 오창 산업권의 고객 특성이 달라 구·동 단위 검색 의도와 업종별 경쟁 환경을 함께 살펴야 합니다.", plan: "핵심 생활권과 업종별 검색 콘텐츠를 구성하고 블로그·지도 검색에서 홈페이지 상담으로 이어지는 동선을 정리합니다." },
 ];
-const LOCAL_LANDING_SLUGS = new Set(["daejeon", "sejong", "daegu", "nonsan", "gwangju", "gongju", "gunsan", "jeonju", "geumsan", "yongin", "cheonan", "cheongju"]);
 const I = [
   ["hospital", "병원"],
   ["lawyer", "변호사"],
@@ -177,15 +176,15 @@ const serviceCards = () => [
   {name:"블로그 원고 작성",desc:"상위노출 목적과 검색 로직에 맞는 업종별 원고를 직접 작성합니다.",href:"blog-writing.html",ai:"assets/ai-service-blog.png"},
 ];
 function home(r = null) {
-  const keyword = r ? `${r.name}온라인마케팅` : "온라인 마케팅";
+  const keyword = r ? `${r.name}온라인마케팅` : "대전온라인마케팅";
   let d = r
     ? `${keyword} 전문 1인 프리랜서. ${r.areas} 고객의 검색 흐름에 맞춰 블로그, 카페, SNS, 홈페이지 제작과 검색 최적화를 직접 진행합니다.`
-    : "블로그, 카페, SNS, 홈페이지 제작과 검색 최적화를 상담부터 실행까지 직접 진행하는 8년 경력 1인 프리랜서입니다.";
+    : "대전바이럴마케팅과 대전온라인마케팅을 중심으로 블로그, 카페, SNS, 홈페이지 제작과 검색 최적화를 상담부터 실행까지 직접 진행합니다.";
   return (
-    H(r ? `${keyword} | 마케팅천재` : "온라인 마케팅 1인 프리랜서 마케팅천재 | 전국 상담", d, r ? `${r.slug}-online-marketing.html` : "", "", r?.name || "대한민국") +
+    H(r ? `${keyword} | 마케팅천재` : "대전바이럴마케팅 | 온라인마케팅은 마케팅천재", d, r ? `${r.slug}-online-marketing.html` : "", "", r?.name || "대전") +
     `<section class="hero home-visual"><div class="video-pair"><video autoplay muted loop playsinline preload="metadata" src="assets/hero-video-1.mp4" aria-label="마케팅 작업 소개 영상"></video></div><div class="video-shade"></div><div class="wrap visual-copy"><span>MARKETING GENIUS${r ? ` · ${r.name.toUpperCase()}` : ""}</span><p class="hero-hook">거품없는 ${r ? `${r.name} ` : ""}마케팅, 지금 바로 시작해보세요.</p><h1>검색에서 상담까지,<br>${r ? keyword : "직접 만드는 마케팅"}</h1><p>${r ? `${r.areas} 고객을 위한 ` : "불필요한 중간 비용 없이 "}직접 실행하는 8년 경력 1인 프리랜서</p></div></section>` +
     `<section class="work-section"><div class="wrap"><div class="center-head"><h2>${r ? `${r.name}에서 ` : ""}직접 진행하는 서비스</h2><p>상담한 사람이 기획하고, 만들고, 운영합니다.</p></div>${cards(S.map((x) => ({ ...x, href: x.slug + ".html" })))}</div></section>` +
-    `<section class="growth-section"><div class="wrap growth-layout"><div class="growth-copy reveal"><span>SEARCH GROWTH</span><h2>감이 아니라<br>흐름을 보고 움직입니다.</h2><p>검색 노출과 콘텐츠 반응을 살피고, 다음 작업에 반영합니다.</p><a href="${U("seo-marketing.html")}">검색 최적화 살펴보기 →</a></div><div class="growth-board reveal"><div class="metric"><span>검색 유입</span><strong class="count-up" data-count="328">0</strong><i>%</i></div><svg viewBox="0 0 640 280" role="img" aria-label="검색 유입 성장 그래프"><defs><linearGradient id="line" x1="0" x2="1"><stop stop-color="#55d9ef"/><stop offset="1" stop-color="#5669ff"/></linearGradient></defs><path class="grid-line" d="M30 230H610M30 170H610M30 110H610M30 50H610"/><path class="growth-area" d="M35 235C100 225 118 202 170 210S245 166 300 178 380 105 430 126 515 58 606 45V245H35Z"/><path class="growth-line" d="M35 235C100 225 118 202 170 210S245 166 300 178 380 105 430 126 515 58 606 45"/><circle cx="606" cy="45" r="8"/></svg><div class="bar-row">${[38,52,47,69,63,82,96].map((n,i)=>`<i style="--h:${n}%;--d:${i*.08}s"></i>`).join("")}</div></div></div></section>` +
+      `<section class="growth-section"><div class="wrap growth-layout"><div class="growth-copy reveal"><span>SEARCH GROWTH</span><h2>감이 아니라<br>흐름을 보고 움직입니다.</h2><p>트렌드에 맞는 컨텐츠를 제작합니다.</p><a href="${U("seo-marketing.html")}">검색 최적화 살펴보기 →</a></div><div class="growth-board reveal"><div class="metric"><span>검색 유입</span><strong class="count-up" data-count="328">0</strong><i>%</i></div><svg viewBox="0 0 640 280" role="img" aria-label="검색 유입 성장 그래프"><defs><linearGradient id="line" x1="0" x2="1"><stop stop-color="#55d9ef"/><stop offset="1" stop-color="#5669ff"/></linearGradient></defs><path class="grid-line" d="M30 230H610M30 170H610M30 110H610M30 50H610"/><path class="growth-area" d="M35 235C100 225 118 202 170 210S245 166 300 178 380 105 430 126 515 58 606 45V245H35Z"/><path class="growth-line" d="M35 235C100 225 118 202 170 210S245 166 300 178 380 105 430 126 515 58 606 45"/><circle cx="606" cy="45" r="8"/></svg><div class="bar-row">${[38,52,47,69,63,82,96].map((n,i)=>`<i style="--h:${n}%;--d:${i*.08}s"></i>`).join("")}</div></div></div></section>` +
     `<section class="direct-section"><div class="wrap direct-card"><div class="direct-photo reveal"><img loading="lazy" decoding="async" src="assets/ai-direct-marketer-work.png" alt="모든 마케팅 작업을 직접 진행하는 1인 프리랜서"><span>DIRECT WORK · NO MIDDLE STEP</span></div><div class="direct-copy reveal"><span class="direct-label">거품 없는 직접 실행</span><h2>마케팅이 비싼 이유는<br>불필요한 중간 과정 때문입니다.</h2><p>실행사라고 하더라도 블로거와 인플루언서 등을 통해 작업을 맡기면 유통비가 발생합니다. 저는 상담부터 기획, 콘텐츠 제작과 최종 확인까지 모든 작업을 직접 진행하기에 거품 없는 온라인 마케팅 작업이 가능합니다.</p><div class="direct-flow"><div><b>01</b><strong>직접 상담</strong></div><i>→</i><div><b>02</b><strong>직접 기획</strong></div><i>→</i><div><b>03</b><strong>직접 실행</strong></div></div><blockquote>저비용으로 고효율의 작업을 추구합니다.<br><strong>마케팅이 필요하시다면 믿고 맡겨주세요.</strong></blockquote></div></div></section>` +
     `<section class="creation-section"><div class="wrap"><div class="center-head"><h2>작업 결과물</h2><p>대표 이미지를 누르면 분야별 실제 결과물을 확인할 수 있습니다.</p></div><div class="creation-grid creation-covers">${[{key:'blog',name:'블로그',cover:'cover-blog-v2.png',desc:'검색 노출 · 콘텐츠 기획'},{key:'cafe',name:'카페',cover:'cover-cafe-v2.png',desc:'커뮤니티 · 정보 콘텐츠'},{key:'sns',name:'인스타그램 & 스레드',cover:'cover-sns-v2.png',desc:'피드 · 릴스 · 스레드'},{key:'seo',name:'코드 최적화',cover:'cover-seo-v2.png',desc:'검색 구조 · 데이터 분석'}].map((g,i)=>`<a class="creation-item creation-cover reveal" href="${U("portfolio.html")}#work-${g.key}"><img loading="lazy" decoding="async" src="assets/${g.cover}" alt="${g.name} 결과물 보기"><div><small>0${i+1}</small><b>${g.name}</b><span>${g.desc}</span></div></a>`).join("")}</div></div></section>` +
     `<section class="partner-section"><div class="center-head"><h2>협업·광고 진행 브랜드</h2><p>다양한 분야의 브랜드와 함께했습니다.</p></div><div class="logo-marquee"><div class="logo-track">${[0,1].map(()=>`<div class="logo-set">${Array.from({length:15},(_,i)=>`<div><img loading="lazy" decoding="async" src="assets/partner-${String(i+1).padStart(2,'0')}.${i>12?'jpg':'png'}" alt="협업 브랜드 로고 ${i+1}"></div>`).join("")}</div>`).join("")}</div></div></section>` +
@@ -301,7 +300,7 @@ function simple(type) {
         "portfolio.html",
         "portfolio.html",
       ) +
-      `<section class="hero portfolio-hero"><div class="wrap"><span class="kicker">OUR CREATIONS</span><h1>처음부터 남다르게,<br><em>결과물로 증명합니다.</em></h1><p class="lead">마케팅천재가 직접 진행한 작업을 분야별로 나누어 확인하세요.</p></div></section><nav class="portfolio-nav wrap">${a.map(g=>`<a href="#work-${g.key}">${g.name}</a>`).join("")}</nav>${a.map((g,n)=>`<section class="portfolio-group ${n%2?'soft':''}" id="work-${g.key}"><div class="wrap"><div class="section-head reveal"><div><span class="kicker">0${n+1} · ${g.key.toUpperCase()}</span><h2>${g.name}</h2></div><p>${g.desc}</p></div><div class="photo-grid work-gallery">${g.files.map((x,i)=>`<figure class="reveal"><img loading="lazy" decoding="async" src="assets/${x}" alt="${g.name} 작업 사례 ${i+1}"></figure>`).join("")}</div></div></section>`).join("")}` +
+      `<section class="hero portfolio-hero"><div class="wrap"><span class="kicker">OUR CREATIONS</span><h1>시작부터 남다르게,<br><em>눈에 보이는 결과로 증명합니다.</em></h1><p class="lead">마케팅천재가 직접 진행한 작업을 분야별로 나누어 확인하세요.</p></div></section><nav class="portfolio-nav wrap">${a.map(g=>`<a href="#work-${g.key}">${g.name}</a>`).join("")}</nav>${a.map((g,n)=>`<section class="portfolio-group ${n%2?'soft':''}" id="work-${g.key}"><div class="wrap"><div class="section-head reveal"><div><span class="kicker">0${n+1} · ${g.key.toUpperCase()}</span><h2>${g.name}</h2></div><p>${g.desc}</p></div><div class="photo-grid work-gallery">${g.files.map((x,i)=>`<figure class="reveal"><img loading="lazy" decoding="async" src="assets/${x}" alt="${g.name} 작업 사례 ${i+1}"></figure>`).join("")}</div></div></section>`).join("")}` +
       F()
     );
   }
@@ -329,7 +328,6 @@ let pages = new Map([
 ]);
 S.forEach((s) => pages.set(s.slug + ".html", service(s)));
 R.forEach((r) => {
-  if (LOCAL_LANDING_SLUGS.has(r.slug)) pages.set(r.slug + "-online-marketing.html", home(r));
   I.filter((i) => (i.slug === "hospital" && HOSPITAL[r.slug]) || r.slug === "daejeon").forEach((i) =>
     pages.set(`${r.slug}-${i.slug}-marketing.html`, detail(r, i)),
   );
@@ -354,9 +352,6 @@ writeFileSync(
   "_redirects",
   "/blog.html /blog-marketing.html 301\n/cafe.html /cafe-marketing.html 301\n/instagram.html /sns-marketing.html 301\n/homepage.html /website-production.html 301\n/code-seo.html /seo-marketing.html 301\n" +
     [
-      ...R.filter((r) => !LOCAL_LANDING_SLUGS.has(r.slug)).map(
-        (r) => `/${r.slug}-online-marketing /regions 301`,
-      ),
       ...R.filter((r) => r.slug !== "daejeon").flatMap((r) =>
         I.filter((i) => i.slug !== "hospital").map(
           (i) => `/${r.slug}-${i.slug}-marketing /${i.slug}-marketing 301`,
